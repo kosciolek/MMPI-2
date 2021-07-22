@@ -2783,6 +2783,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@types/react-helmet@npm:^6.1.2":
+  version: 6.1.2
+  resolution: "@types/react-helmet@npm:6.1.2"
+  dependencies:
+    "@types/react": "*"
+  checksum: 51a569c67e42474b681584c2626e2eec4f89275868617e03870d4d3ff5e5d090baf9f87c7201fa80003872e9887f2e5b7ed76506e4aabc8a0585445f15d76e84
+  languageName: node
+  linkType: hard
+
 "@types/react@npm:*, @types/react@npm:^17.0.0":
   version: 17.0.14
   resolution: "@types/react@npm:17.0.14"
@@ -3333,6 +3342,47 @@ __metadata:
   checksum: ec09a359f98e9f8c47bf6c965e73b520a1a65e93f1febf6472babc8b6b0b425a2084452be103da5be11aec8c502ecfa29400713d55ef774579d04f691db44a2d
   languageName: node
   linkType: hard
+
+"MMPI-2@workspace:.":
+  version: 0.0.0-use.local
+  resolution: "MMPI-2@workspace:."
+  dependencies:
+    "@emotion/react": ^11.4.0
+    "@emotion/styled": ^11.3.0
+    "@reduxjs/toolkit": ^1.6.1
+    "@testing-library/jest-dom": ^5.11.4
+    "@testing-library/react": ^11.1.0
+    "@testing-library/user-event": ^12.1.10
+    "@types/jest": ^26.0.15
+    "@types/node": ^12.0.0
+    "@types/react": ^17.0.0
+    "@types/react-dom": ^17.0.0
+    "@types/react-helmet": ^6.1.2
+    "@typescript-eslint/eslint-plugin": ^4.28.4
+    "@typescript-eslint/parser": ^4.28.4
+    eslint: ^7.31.0
+    eslint-config-airbnb-typescript: ^12.3.1
+    eslint-config-prettier: ^8.3.0
+    eslint-config-react-app: ^6.0.0
+    eslint-import-resolver-node: ^0.3.4
+    eslint-plugin-import: ^2.23.4
+    eslint-plugin-jsx-a11y: ^6.4.1
+    eslint-plugin-react: ^7.24.0
+    eslint-plugin-react-hooks: ^4.2.0
+    husky: ^7.0.1
+    i18next: ^20.3.4
+    i18next-browser-languagedetector: ^6.1.2
+    prettier: ^2.3.2
+    react: ^17.0.2
+    react-dom: ^17.0.2
+    react-helmet: ^6.1.0
+    react-i18next: ^11.11.3
+    react-scripts: 4.0.3
+    react-spring: ^9.2.4
+    typescript: ^4.1.2
+    web-vitals: ^1.0.1
+  languageName: unknown
+  linkType: soft
 
 "abab@npm:^2.0.3":
   version: 2.0.5
@@ -10620,46 +10670,6 @@ fsevents@^1.2.7:
   checksum: 5a45b57b3467e5a743d87a96d7be57598a6f72eb3b7eeac237074c566bd04278766ae03bb523c32f34581c565a19e74e54ec90c6ce0630a540787c755b4c4b4e
   languageName: node
   linkType: hard
-
-"minnesota-multiphasic-personality-inventory-2@workspace:.":
-  version: 0.0.0-use.local
-  resolution: "minnesota-multiphasic-personality-inventory-2@workspace:."
-  dependencies:
-    "@emotion/react": ^11.4.0
-    "@emotion/styled": ^11.3.0
-    "@reduxjs/toolkit": ^1.6.1
-    "@testing-library/jest-dom": ^5.11.4
-    "@testing-library/react": ^11.1.0
-    "@testing-library/user-event": ^12.1.10
-    "@types/jest": ^26.0.15
-    "@types/node": ^12.0.0
-    "@types/react": ^17.0.0
-    "@types/react-dom": ^17.0.0
-    "@typescript-eslint/eslint-plugin": ^4.28.4
-    "@typescript-eslint/parser": ^4.28.4
-    eslint: ^7.31.0
-    eslint-config-airbnb-typescript: ^12.3.1
-    eslint-config-prettier: ^8.3.0
-    eslint-config-react-app: ^6.0.0
-    eslint-import-resolver-node: ^0.3.4
-    eslint-plugin-import: ^2.23.4
-    eslint-plugin-jsx-a11y: ^6.4.1
-    eslint-plugin-react: ^7.24.0
-    eslint-plugin-react-hooks: ^4.2.0
-    husky: ^7.0.1
-    i18next: ^20.3.4
-    i18next-browser-languagedetector: ^6.1.2
-    prettier: ^2.3.2
-    react: ^17.0.2
-    react-dom: ^17.0.2
-    react-helmet: ^6.1.0
-    react-i18next: ^11.11.3
-    react-scripts: 4.0.3
-    react-spring: ^9.2.4
-    typescript: ^4.1.2
-    web-vitals: ^1.0.1
-  languageName: unknown
-  linkType: soft
 
 "mississippi@npm:^3.0.0":
   version: 3.0.0

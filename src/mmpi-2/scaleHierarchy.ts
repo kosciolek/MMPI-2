@@ -1,4 +1,6 @@
-export const hierarchy = {
+export type ScaleHierarchy = typeof scaleHierarchy;
+
+export const scaleHierarchy = {
   "VRIN & TRIN": ["VRIN", "TRIN"],
   "Skale kontrolne i kliniczne": [
     "F",
