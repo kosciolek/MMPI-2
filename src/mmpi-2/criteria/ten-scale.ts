@@ -1,6 +1,8 @@
-export type TenScale = typeof tenScale;
+export type TenScale = {
+  [K in "male" | "female"]: { [scaleName: string]: number[] };
+};
 
-export const tenScale = {
+export const tenScale: TenScale = {
   female: {
     VRIN: [
       32, 35, 38, 41, 44, 47, 50, 54, 57, 60, 63, 66, 69, 72, 75, 79, 82, 85,

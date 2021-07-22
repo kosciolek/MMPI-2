@@ -12,8 +12,14 @@ export const calculateRawScale = (
   if (scaleId === "TRIN") return calculateTrin(answers);
 
   const resolvedScale = scaleId === "Mf" ? `${scaleId}-${gender[0]}` : scaleId;
-  const positive = mainScales[resolvedScale].positive.reduce((acc, pos) => answers[pos - 1] ? acc + 1 : acc, 0);
-  const negative = mainScales[resolvedScale].negative.reduce((acc, pos) => !answers[pos - 1] ? acc + 1 : acc, 0);
+  const positive = mainScales[resolvedScale].positive.reduce(
+    (acc, pos) => (answers[pos - 1] ? acc + 1 : acc),
+    0
+  );
+  const negative = mainScales[resolvedScale].negative.reduce(
+    (acc, pos) => (!answers[pos - 1] ? acc + 1 : acc),
+    0
+  );
 
   return positive + negative;
 };
