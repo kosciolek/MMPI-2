@@ -1,12 +1,10 @@
+import {LANGUAGE} from "./utils";
+
 export const resources = {
-  en: {
-    translation: {
-      "Welcome to React": "Welcome to React and react-i18next"
-    }
+  [LANGUAGE.PL]: {
+
   },
-  fr: {
-    translation: {
-      "Welcome to React": "Bienvenue à React et react-i18next"
-    }
+  [LANGUAGE.EN]: {
+
   }
 };
