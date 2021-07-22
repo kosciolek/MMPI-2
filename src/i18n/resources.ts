@@ -1,10 +1,6 @@
-import {LANGUAGE} from "./utils";
+import { LANGUAGE } from "./utils";
 
 export const resources = {
-  [LANGUAGE.PL]: {
-
-  },
-  [LANGUAGE.EN]: {
-
-  }
+  [LANGUAGE.PL]: {},
+  [LANGUAGE.EN]: {},
 };
