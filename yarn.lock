@@ -1526,7 +1526,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@babel/runtime@npm:^7.12.5, @babel/runtime@npm:^7.13.10, @babel/runtime@npm:^7.14.5, @babel/runtime@npm:^7.9.2":
+"@babel/runtime@npm:^7.12.0, @babel/runtime@npm:^7.12.5, @babel/runtime@npm:^7.13.10, @babel/runtime@npm:^7.14.5, @babel/runtime@npm:^7.14.6, @babel/runtime@npm:^7.9.2":
   version: 7.14.8
   resolution: "@babel/runtime@npm:7.14.8"
   dependencies:
@@ -8325,6 +8325,24 @@ fsevents@^1.2.7:
   languageName: node
   linkType: hard
 
+"i18next-browser-languagedetector@npm:^6.1.2":
+  version: 6.1.2
+  resolution: "i18next-browser-languagedetector@npm:6.1.2"
+  dependencies:
+    "@babel/runtime": ^7.14.6
+  checksum: b5e8b79040e92cf767aa98375b45e9534feb32f7794ef3c572659abafde571f51c77115a1db7fa9a0707601d393a52bffd686e0b0df1c84332f90525ee7a30d6
+  languageName: node
+  linkType: hard
+
+"i18next@npm:^20.3.4":
+  version: 20.3.4
+  resolution: "i18next@npm:20.3.4"
+  dependencies:
+    "@babel/runtime": ^7.12.0
+  checksum: ba4ddc8f489e0d842496bd6a50c93b9d51e58565d9aca326c83dd28672d30c66c54a68fc33d89e57c3100f12d8350eeb266b3617b2d7180dca0a40aa5f3118be
+  languageName: node
+  linkType: hard
+
 "iconv-lite@npm:0.4.24":
   version: 0.4.24
   resolution: "iconv-lite@npm:0.4.24"
@@ -10629,6 +10647,8 @@ fsevents@^1.2.7:
     eslint-plugin-react: ^7.24.0
     eslint-plugin-react-hooks: ^4.2.0
     husky: ^7.0.1
+    i18next: ^20.3.4
+    i18next-browser-languagedetector: ^6.1.2
     prettier: ^2.3.2
     react: ^17.0.2
     react-dom: ^17.0.2
