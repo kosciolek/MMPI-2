@@ -12,6 +12,8 @@ export const themes = {
   light,
 };
 export type ThemeType = keyof typeof themes;
+export type ThemeColor = keyof AppTheme["colors"];
+
 export type ThemeTypeContext = {
   type: ThemeType;
   setType: (type: ThemeType) => void;
