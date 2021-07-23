@@ -1,5 +1,6 @@
 import { Helmet } from "react-helmet";
 import { useTranslation } from "react-i18next";
+import { BrowserRouter } from "react-router-dom";
 import { Txt } from "./components/Txt";
 import { GlobalStyles } from "./GlobalStyles";
 
@@ -12,9 +13,11 @@ function App() {
         <title>MMIP-2 - {t("Homepage")}</title>
       </Helmet>
       <GlobalStyles />
-      <div>
-        <Txt color="primary">Hello</Txt>
-      </div>
+      <BrowserRouter>
+        <div>
+          <Txt color="primary">Hello</Txt>
+        </div>
+      </BrowserRouter>
     </>
   );
 }
