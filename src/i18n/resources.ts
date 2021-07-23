@@ -1,12 +1,12 @@
-import { translationEn } from "./en";
-import { translationPl } from "./pl";
 import { LANGUAGE } from "./utils";
+import pl from "./pl/translation.json";
+import en from "./en/translation.json";
 
 export const resources = {
   [LANGUAGE.PL]: {
-    translation: translationPl,
+    translation: pl,
   },
   [LANGUAGE.EN]: {
-    translation: translationEn,
+    translation: en,
   },
 };
