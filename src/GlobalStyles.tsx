@@ -1,6 +1,7 @@
 import { css, Global } from "@emotion/react";
+import { AppTheme } from "./theme";
 
-const styles = css`
+const styles = (theme: AppTheme) => css`
   *,
   :after,
   :before {
@@ -11,8 +12,9 @@ const styles = css`
   }
 
   body {
-    font-size: 16px;
-    font-family: "Poppins", sans-serif;
+    font-size: 18px;
+    font-family: ${theme.font.family};
+    font-weight: ${theme.font.weight};
   }
 
   input {

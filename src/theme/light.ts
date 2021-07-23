@@ -1,4 +1,8 @@
 export const light = {
+  font: {
+    family: "'Quicksand', sans-serif",
+    weight: 500,
+  },
   colors: {
     primary50: "#e2f2ff",
     primary100: "#b9d6f9",

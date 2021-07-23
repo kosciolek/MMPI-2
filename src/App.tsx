@@ -1,5 +1,6 @@
 import { Helmet } from "react-helmet";
 import { useTranslation } from "react-i18next";
+import { Txt } from "./components/Txt";
 import { GlobalStyles } from "./GlobalStyles";
 
 function App() {
@@ -11,7 +12,9 @@ function App() {
         <title>MMIP-2 - {t("Homepage")}</title>
       </Helmet>
       <GlobalStyles />
-      <div>Hello</div>
+      <div>
+        <Txt color="primary">Hello</Txt>
+      </div>
     </>
   );
 }
