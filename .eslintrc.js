@@ -27,10 +27,8 @@ module.exports = {
     "react/react-in-jsx-scope": "off",
     "import/prefer-default-export": "off",
     "no-underscore-dangle": "off",
-    "@typescript-eslint/no-unused-vars": [
-      "error",
-      { varsIgnorePattern: "^_" },
-    ],
+    "@typescript-eslint/no-unused-vars": ["error", { varsIgnorePattern: "^_" }],
+    "react/require-default-props": "off",
     "react/no-unescaped-entities": "off",
     "import/no-extraneous-dependencies": [
       "error",

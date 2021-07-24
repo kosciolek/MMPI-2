@@ -1,12 +1,17 @@
+import { useState } from "react";
 import { Helmet } from "react-helmet";
 import { useTranslation } from "react-i18next";
-import { BrowserRouter } from "react-router-dom";
-import { Txt } from "./components/Txt";
+import { BrowserRouter, Redirect, Route, Switch } from "react-router-dom";
+import { Calculator } from "./components/Calculator";
+import { Homepage } from "./components/Homepage";
+import { Layout } from "./components/Layout";
+import { Questionnaire } from "./components/Questionnaire";
 import { GlobalStyles } from "./GlobalStyles";
 
 function App() {
   const { t } = useTranslation();
 
+  const [asd, setAsd] = useState("");
   return (
     <>
       <Helmet>
@@ -14,9 +19,24 @@ function App() {
       </Helmet>
       <GlobalStyles />
       <BrowserRouter>
-        <div>
-          <Txt color="primary">Hello</Txt>
-        </div>
+        <Switch>
+          <Route path="/questionnaire">
+            <Layout>
+              <Questionnaire />
+            </Layout>
+          </Route>
+          <Route path="/home">
+            <Layout>
+              <Homepage />
+            </Layout>
+          </Route>
+          <Route path="/calculator">
+            <Layout>
+              <Calculator />
+            </Layout>
+          </Route>
+          <Redirect to="/home" />
+        </Switch>
       </BrowserRouter>
     </>
   );

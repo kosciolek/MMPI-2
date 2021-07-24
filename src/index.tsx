@@ -1,7 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import App from "./App";
-import { GlobalMenuContextProvider } from "./components/GlobalMenu/GlobalMenuContextProvider";
+import {PortalContextProvider} from "./components/Portal/PortalContextProvider";
 import reportWebVitals from "./reportWebVitals";
 import "./i18n";
 import { AppThemeProvider } from "./theme";
@@ -9,9 +9,9 @@ import { AppThemeProvider } from "./theme";
 ReactDOM.render(
   <React.StrictMode>
     <AppThemeProvider>
-      <GlobalMenuContextProvider>
+      <PortalContextProvider>
         <App />
-      </GlobalMenuContextProvider>
+      </PortalContextProvider>
     </AppThemeProvider>
   </React.StrictMode>,
   document.getElementById("root")
