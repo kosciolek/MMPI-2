@@ -1,7 +1,7 @@
 module.exports = {
   root: true,
   parser: "@typescript-eslint/parser",
-  extends: ["airbnb-typescript", "prettier"],
+  extends: ["react-app", "airbnb-typescript", "prettier"],
   env: {
     browser: true,
     node: true,
