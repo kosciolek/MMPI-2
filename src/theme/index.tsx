@@ -32,7 +32,7 @@ export const AppThemeProvider: FC = ({ children }) => {
       type,
       setType,
     }),
-    []
+    [type]
   );
   return (
     <themeTypeContext.Provider value={contextValue}>

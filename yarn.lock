@@ -3409,6 +3409,7 @@ __metadata:
     eslint-config-prettier: ^8.3.0
     eslint-config-react-app: ^6.0.0
     eslint-import-resolver-node: ^0.3.4
+    eslint-plugin-flowtype: ^5.8.1
     eslint-plugin-import: ^2.23.4
     eslint-plugin-jsx-a11y: ^6.4.1
     eslint-plugin-react: ^7.24.0
@@ -3417,6 +3418,7 @@ __metadata:
     i18next: ^20.3.4
     i18next-browser-languagedetector: ^6.1.2
     i18next-parser: ^4.2.0
+    mitt: ^3.0.0
     prettier: ^2.3.2
     react: ^17.0.2
     react-dom: ^17.0.2
@@ -6907,6 +6909,18 @@ __metadata:
   peerDependencies:
     eslint: ^7.1.0
   checksum: 9e44c190dcb7de120d4dc8572eb137fbc0f2080f966aee6f6ab8913708e16fd67c673bdb86dee48860c9c0e37d1cd430a6f07dc2ccfd4db7501b625334a65de2
+  languageName: node
+  linkType: hard
+
+"eslint-plugin-flowtype@npm:^5.8.1":
+  version: 5.8.1
+  resolution: "eslint-plugin-flowtype@npm:5.8.1"
+  dependencies:
+    lodash: ^4.17.15
+    string-natural-compare: ^3.0.1
+  peerDependencies:
+    eslint: ^7.1.0
+  checksum: be5184a3fde3a613d7da7bef012c6a5b70664c205158417eb526d72582ec188c0336700468cd5184f5575a5df1895359fb36e7fd5c7394befcfbe4cb6713dfb3
   languageName: node
   linkType: hard
 
@@ -11213,6 +11227,13 @@ fsevents@^1.2.7:
     stream-each: ^1.1.0
     through2: ^2.0.0
   checksum: 6d30a5ba65e27cdd453148abfeadf9f4a64a156a0dd17640876bf4f75d4ee3d5fbd7658f11cc6322b56c81628585de96dbb2b177476012470df6d05323b46e29
+  languageName: node
+  linkType: hard
+
+"mitt@npm:^3.0.0":
+  version: 3.0.0
+  resolution: "mitt@npm:3.0.0"
+  checksum: 487329fd3d202f457deeed2a45e2d2681ac9576d1edbc5868ffdc1a0b8418af3f54e2066e2dcde01acc0cf6de89a6ad470f7529cb02b8f4ebbd422f33c0f83db
   languageName: node
   linkType: hard
 
