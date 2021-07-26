@@ -1,18 +1,22 @@
 import React from "react";
 import ReactDOM from "react-dom";
+import { Provider } from "react-redux";
 import App from "./App";
-import {PortalContextProvider} from "./components/Portal/PortalContextProvider";
+import { PortalContextProvider } from "./components/Portal/PortalContextProvider";
+import { store } from "./redux/store";
 import reportWebVitals from "./reportWebVitals";
-import "./i18n";
 import { AppThemeProvider } from "./theme";
+import "./i18n";
 
 ReactDOM.render(
   <React.StrictMode>
-    <AppThemeProvider>
-      <PortalContextProvider>
-        <App />
-      </PortalContextProvider>
-    </AppThemeProvider>
+    <Provider store={store}>
+      <AppThemeProvider>
+        <PortalContextProvider>
+          <App />
+        </PortalContextProvider>
+      </AppThemeProvider>
+    </Provider>
   </React.StrictMode>,
   document.getElementById("root")
 );

@@ -18,17 +18,13 @@ export const LanguageMenu = () => {
     i18n.changeLanguage(i18n.language === "pl" ? "en" : "pl");
   };
   return (
-    <Root onClick={onClick}>
-      <FlagComponent />
+    <Root left={<FlagComponent />} onClick={onClick}>
       <LangText>{t("Language")}</LangText>
     </Root>
   );
 };
 export const Root = styled(Button)`
   background-color: ${(p) => p.theme.colors.primary50};
-  & > * + * {
-    margin-left: 16px;
-  }
 `;
 export const LangText = styled.span`
   color: ${(p) => p.theme.colors.neutral600};

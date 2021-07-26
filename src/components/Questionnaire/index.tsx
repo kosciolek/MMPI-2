@@ -3,10 +3,10 @@ import {Question} from "./Question";
 
 export const Questionnaire = () => {
   const { path } = useRouteMatch();
+
   return (
     <Switch>
-      <Route path={`${path}:questionId/`}>
-        asd
+      <Route path={`${path}/:questionId/`}>
         <Question />
       </Route>
       <Redirect to={`${path}/1/`} />

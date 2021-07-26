@@ -1,8 +1,16 @@
 {
+  "MMIP - 2": "",
   "Homepage": "Homepage",
+  "The questionnaire is not finished": "The questionnaire is not finished",
+  "Missing <1>{{answers}}</1> answers": {
+    " <5><0>View answers": {
+      "</0></5>": "Missing <1>{{answers}}</1> answers. <5><0>View answers.</0></5>"
+    }
+  },
   "MMPI - 2": "MMPI - 2",
   "Minnesota Multiphasic Personality Inventory - 2": "Minnesota Multiphasic Personality Inventory - 2",
   "Questionnaire": "Questionnaire",
   "Calculator": "Calculator",
+  "contact": "",
   "Language": "Language"
 }

@@ -6,3 +6,16 @@ export const joinPaths = (...paths: string[]) => {
   const firstChar = paths[0][0];
   return firstChar === "/" ? `/${newPath}` : newPath;
 };
+
+export const downloadString = (string: string, filename: string, datatype = "application/json") => {
+  const element = document.createElement("a");
+  element.setAttribute(
+    "href",
+    `data:${datatype};charset=utf-8,${encodeURIComponent(string)}`
+  );
+  element.setAttribute("download", filename);
+  element.style.display = "none";
+  document.body.appendChild(element);
+  element.click();
+  document.body.removeChild(element);
+};

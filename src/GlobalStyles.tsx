@@ -15,6 +15,7 @@ const styles = (theme: AppTheme) => css`
     font-size: 18px;
     font-family: ${theme.font.family};
     font-weight: ${theme.font.weight};
+    line-height: 1.4;
   }
 
   input {
@@ -35,9 +36,10 @@ const styles = (theme: AppTheme) => css`
     appearance: none;
     border: 0;
     background-color: transparent;
-    font: inherit;
     cursor: pointer;
     -webkit-tap-highlight-color: transparent;
+    font-size: inherit;
+    font-family: inherit;
   }
 `;
 

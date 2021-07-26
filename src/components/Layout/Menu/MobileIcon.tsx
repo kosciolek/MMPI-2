@@ -1,22 +1,24 @@
 import styled from "@emotion/styled";
 import React from "react";
-import { useSpring, animated, config } from "react-spring";
+import { useSpring, animated } from "react-spring";
+import { useAppDispatch, useAppSelector } from "../../../redux/hooks";
+import { uiSlice } from "../../../redux/ui";
 import { ReactComponent as MenuSvg } from "./menu-mobile.svg";
 
-export const MobileIcon = ({
-  open,
-  onChange,
-}: {
-  open: boolean;
-  onChange: (newState: boolean, e: React.MouseEvent<HTMLButtonElement>) => void;
-}) => {
+export const MobileIcon = () => {
+  const open = useAppSelector((state) => state.ui.mobileMenuOpen);
+  const dispatch = useAppDispatch();
+  const onClick = () => dispatch(uiSlice.actions.setMobileMenuOpen(!open));
+
   const spring = useSpring({
     ...(open ? { rotate: 180 } : { rotate: 90 }),
-    config: config.stiff,
+    config: {
+      mass: 0.5,
+      tension: 900,
+      friction: 60,
+    },
   });
 
-  const onClick = (e: React.MouseEvent<HTMLButtonElement>) =>
-    onChange(!open, e);
   return (
     <Root style={spring} onClick={onClick}>
       <StyledMenuSvg />

@@ -24,6 +24,7 @@ module.exports = {
     "no-use-before-define": "off",
     "react/jsx-props-no-spreading": "off",
     "react/prop-types": "off",
+    "no-param-reassign": "off",
     "react/react-in-jsx-scope": "off",
     "import/prefer-default-export": "off",
     "no-underscore-dangle": "off",

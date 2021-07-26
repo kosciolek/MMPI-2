@@ -1,7 +1,98 @@
-import { useParams } from "react-router-dom";
+import styled from "@emotion/styled";
+import { useDispatch } from "react-redux";
+import { useParams, useRouteMatch, Redirect } from "react-router-dom";
+import { questionCount } from "../../../mmpi-2/utils";
+import {mmpiSlice} from "../../../redux/mmpi";
+import { Button } from "../../Button";
+import { Link } from "../../Link";
 
+/* Todo make links relative */
 export const Question = () => {
   const { questionId } = useParams<{ questionId: string }>();
+  const { path } = useRouteMatch();
+  const questionInt = parseInt(questionId, 10);
+  const nextQuestion = questionInt + 1;
 
-  return <div>question {questionId ?? "no id"}</div>;
+  const dispatch = useDispatch();
+  const onAnswerClick = (answer: boolean) => {
+    dispatch(
+      mmpiSlice.actions.answerSelected({
+        questionId: questionInt - 1,
+        answer,
+      })
+    );
+  };
+
+  if (
+    Number.isNaN(questionInt) ||
+    questionInt > questionCount ||
+    questionInt < 0
+  )
+    return <Redirect to="/questionnaire/1" />;
+
+  return (
+    <Root>
+      <Contents>
+        <Counter>
+          {questionId} / {questionCount}
+        </Counter>
+        <QuestionText>Zazwyczaj budzę się pełen energii</QuestionText>
+        <Answers>
+          <Link
+            to={`/questionnaire/${nextQuestion}`}
+            onClick={() => onAnswerClick(true)}
+          >
+            <Answer>TAK</Answer>
+          </Link>
+          <Link
+            to={`/questionnaire/${nextQuestion}`}
+            onClick={() => onAnswerClick(false)}
+          >
+            <Answer>Nie</Answer>
+          </Link>
+        </Answers>
+      </Contents>
+    </Root>
+  );
 };
+
+export const Root = styled.div`
+  display: grid;
+  grid-template:
+    "space-left main sidebar space-right" 80px / 1fr 1000px minmax(200px, 350px)
+    1fr;
+`;
+
+export const Contents = styled.div`
+  grid-column: main / sidebar;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 80px;
+`;
+
+export const Counter = styled.div`
+  font-weight: bold;
+  font-size: 18px;
+  color: ${(p) => p.theme.colors.neutral600};
+`;
+export const QuestionText = styled.div`
+  margin-top: 8px;
+  color: ${(p) => p.theme.colors.primary};
+  font-size: 44px;
+  font-weight: bold;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.18);
+`;
+export const Answers = styled.div`
+  margin-top: 80px;
+  display: flex;
+  & > * + * {
+    margin-left: 64px;
+  }
+`;
+export const Answer = styled(Button)`
+  color: ${(p) => p.theme.colors.primary500};
+  font-size: 40px;
+  font-weight: normal;
+  text-transform: uppercase;
+`;

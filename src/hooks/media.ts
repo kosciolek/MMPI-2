@@ -54,27 +54,27 @@ export type Query = (<T extends number>(
 } & QueryObject<"min">;
 
 /* Min func */
-export const query: Query = (<T extends number>(minWidth: T) =>
+export const media: Query = (<T extends number>(minWidth: T) =>
   `@media screen and (min-width: ${minWidth}px)`) as any;
 /* Max breakpoint funcs & hooks */
-Object.assign(query, makeQueryObject("min"));
+Object.assign(media, makeQueryObject("min"));
 /* Min any hook */
 // eslint-disable-next-line react-hooks/rules-of-hooks
-query.useQuery = (minWidth: number) => useQuery(minWidth, "min");
+media.useQuery = (minWidth: number) => useQuery(minWidth, "min");
 /* Max func */
-query.down = (<T extends number>(minWidth: T) =>
+media.down = (<T extends number>(minWidth: T) =>
   `@media screen and (min-width: ${minWidth}px)`) as any;
 /* Max breakpoint funcs & hooks */
-Object.assign(query.down, makeQueryObject("max"));
+Object.assign(media.down, makeQueryObject("max"));
 /* Max any hook */
 // eslint-disable-next-line react-hooks/rules-of-hooks
-query.down.useQuery = (minWidth: number) => useQuery(minWidth, "max");
+media.down.useQuery = (minWidth: number) => useQuery(minWidth, "max");
 
 export function makeSubquery(
   breakpointOrWidth: BreakpointKeys | number,
   type: "max" | "min" = "min"
 ) {
-  const source = type === "min" ? query : query.down;
+  const source = type === "min" ? media : media.down;
   return typeof breakpointOrWidth === "string"
     ? {
         useQuery:

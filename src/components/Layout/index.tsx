@@ -1,47 +1,26 @@
 import styled from "@emotion/styled";
-import { ReactNode } from "react";
+import { FC } from "react";
 import { Button } from "../Button";
 import { Sidebar } from "../Sidebar";
 import { Txt } from "../Txt";
-import {
-  FoldingSlot,
-  Grid,
-  LayoutSlot,
-  NavbarLine,
-  SidebarLine,
-  SidebarSlot,
-} from "./Grid";
+import { OuterGrid } from "./Grid";
 import { Menu } from "./Menu";
 import { Wave } from "./Wave";
 import { ReactComponent as CompactViewIcon } from "../../assets/compact-view.svg";
 
-export const Layout = ({
-  children,
-  sidebar,
-}: {
-  children?: ReactNode;
-  sidebar?: ReactNode;
-}) => (
+export const Layout: FC = ({ children }) => (
   <Root>
-    <Grid>
-      <NavbarLine />
-      <SidebarLine />
-      <FoldingSlot slot="blank" />
-      <Menu />
-      <LayoutSlot slot="content">{children}</LayoutSlot>
-      <SidebarSlot>
-        <Sidebar>
-          <Button left={<CompactViewIcon />} color="neutral600">
-            Widok&nbsp;<Txt color="primary">kompaktowy</Txt>
-          </Button>
-        </Sidebar>
-      </SidebarSlot>
-      <LayoutSlot slot="wave">
-        <Wave />
-      </LayoutSlot>
-    </Grid>
+    <Menu />
+    <Content>{children}</Content>
+    <Wave />
   </Root>
 );
+
+export const Content = styled.div`
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+`;
 
 export const Root = styled.div`
   height: 100vh;

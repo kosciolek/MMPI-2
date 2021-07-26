@@ -1,4 +1,3 @@
-import { useState } from "react";
 import { Helmet } from "react-helmet";
 import { useTranslation } from "react-i18next";
 import { BrowserRouter, Redirect, Route, Switch } from "react-router-dom";
@@ -10,12 +9,10 @@ import { GlobalStyles } from "./GlobalStyles";
 
 function App() {
   const { t } = useTranslation();
-
-  const [asd, setAsd] = useState("");
   return (
     <>
       <Helmet>
-        <title>MMIP-2 - {t("Homepage")}</title>
+        <title>{t("MMIP - 2")} - {t("Homepage")}</title>
       </Helmet>
       <GlobalStyles />
       <BrowserRouter>

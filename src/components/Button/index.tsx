@@ -1,7 +1,7 @@
 import styled from "@emotion/styled";
 import { ReactNode } from "react";
 import { ThemeColor } from "../../theme";
-import { variant } from "../../utils/css";
+import { iif, variant } from "../../utils/css";
 
 import { Props } from "../../utils/ts";
 
@@ -13,16 +13,10 @@ export type ButtonProps = {
   color?: ThemeColor;
 } & Props<typeof Root>;
 
-export const Button = ({
-  left,
-  right,
-  color,
-  children,
-  ...rest
-}: ButtonProps) => (
-  <Root color={color} {...rest}>
+export const Button = ({ left, right, children, ...rest }: ButtonProps) => (
+  <Root {...rest}>
     {left && <Left>{left}</Left>}
-    {children}
+    <Label>{children}</Label>
     {right && <Right>{right}</Right>}
   </Root>
 );
@@ -31,6 +25,7 @@ export const Root = styled.button<{
   variant?: "filled" | "text" | "outlined";
   size?: "big" | "medium";
   color?: ThemeColor;
+  noPadding?: boolean;
 }>`
   display: inline-flex;
   align-items: center;
@@ -91,6 +86,12 @@ export const Root = styled.button<{
   & {
     color: ${(p) => p.color && p.theme.colors[p.color]};
   }
+
+  ${iif("noPadding")} {
+    & {
+      padding: 0;
+    }
+  }
 `;
 Root.defaultProps = {
   variant: "text",
@@ -109,4 +110,8 @@ export const Right = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+`;
+export const Label = styled.span`
+  display: inline-flex;
+  align-self: center;
 `;

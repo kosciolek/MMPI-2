@@ -1,15 +1,17 @@
-import styled from "@emotion/styled";
+import styled from "@emotion/styled/macro";
 import { useTranslation } from "react-i18next";
 import { Link } from "react-router-dom";
+import { ReactComponent as CompactViewIcon } from "../../assets/compact-view.svg";
 import { Button } from "../Button";
-import { LayoutSlot } from "../Layout/Grid";
+import { Sidebar } from "../Sidebar";
+import { Txt } from "../Txt";
 import { ReactComponent as TestSvg } from "./homepage-test-icon.svg";
 
 export const Homepage = () => {
   const { t } = useTranslation();
   return (
-    <LayoutSlot slot="content">
-      <Root>
+    <Root>
+      <Content>
         <WritingsWrapper>
           <Title>{t("MMPI - 2")}</Title>
           <Bar />
@@ -17,30 +19,51 @@ export const Homepage = () => {
             {t("Minnesota Multiphasic Personality Inventory - 2")}
           </Subtitle>
           <Buttons>
-            <Link to="/questionnaire">
-              <Button size="big" variant="filled">
+            <Link to="/questionnaire/">
+              <Button tabIndex={-1} size="big" variant="filled">
                 {t("Questionnaire")}
               </Button>
             </Link>
-            <Link to="/calculator">
-              <Button size="big" variant="outlined">
+            <Link to="/calculator/">
+              <Button tabIndex={-1} size="big" variant="outlined">
                 {t("Calculator")}
               </Button>
             </Link>
           </Buttons>
         </WritingsWrapper>
         <StyledTestSvg />
-      </Root>
-    </LayoutSlot>
+      </Content>
+      <Sidebar>
+        <Button noPadding left={<CompactViewIcon />} color="neutral600">
+          <span>
+            Widok <Txt color="primary">kompaktowy</Txt>
+          </span>
+        </Button>
+      </Sidebar>
+    </Root>
   );
 };
+
 export const Root = styled.div`
+  display: grid;
+  height: 100%;
+  grid-template:
+    "space-left content sidebar space-right" 1fr / 1fr 1000px minmax(
+      200px,
+      300px
+    )
+    1fr;
+`;
+export const Content = styled.div`
   display: flex;
+  grid-area: content;
+
   justify-content: center;
   padding-top: 64px;
 `;
 export const WritingsWrapper = styled.div`
   display: flex;
+  grid-area: content;
   flex-direction: column;
   flex-basis: 50%;
   margin-right: 48px;
