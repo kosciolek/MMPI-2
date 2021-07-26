@@ -5,7 +5,7 @@ export const initialState = {
   mobileMenuOpen: false,
   answerView: {
     page: 0,
-    answersPerPage: 30,
+    answersPerPage: 25,
   },
 };
 

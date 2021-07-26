@@ -1,16 +1,18 @@
 {
-  "MMIP - 2": "",
+  "MMPI - 2": "MMPI - 2",
   "Homepage": "Strona główna",
+  "<0>{{first}} - {{last}}</0> out of <3>{{questionCount}}</3>": "<0>{{first}} - {{last}}</0> z <3>{{questionCount}}</3>",
   "The questionnaire is not finished": "Kwestionariusz nie został ukończony",
   "Missing <1>{{answers}}</1> answers": {
-    " <5><0>View answers": {
-      "</0></5>": "Brakuje <1>{{answers}}</1> pytań. <5><0>Przejrzyj odpowiedzi.</0></5>"
+    " <5>View answers": {
+      "</5>": "Brakuje <1>{{answers}}</1> odpowiedzi. <5>Sprawdź odpowiedzi.</5>"
     }
   },
-  "MMPI - 2": "MMPI - 2",
   "Minnesota Multiphasic Personality Inventory - 2": "Minnesocki Wielowymiarowy Inwentarz Osobowości - 2",
   "Questionnaire": "Kwestionariusz",
   "Calculator": "Kalkulator",
-  "contact": "",
-  "Language": "Język"
+  "contact": "Kontakt",
+  "Language": "Język",
+  "Questionnaire completed": "",
+  "View results": ""
 }

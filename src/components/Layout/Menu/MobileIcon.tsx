@@ -3,6 +3,7 @@ import React from "react";
 import { useSpring, animated } from "react-spring";
 import { useAppDispatch, useAppSelector } from "../../../redux/hooks";
 import { uiSlice } from "../../../redux/ui";
+import { isDesktopLayout } from "../utils";
 import { ReactComponent as MenuSvg } from "./menu-mobile.svg";
 
 export const MobileIcon = () => {
@@ -27,6 +28,10 @@ export const MobileIcon = () => {
 };
 
 export const Root = styled(animated.button)`
+  ${isDesktopLayout.query} {
+    display: none;
+  }
+  
   height: 32px;
   width: 32px;
 `;

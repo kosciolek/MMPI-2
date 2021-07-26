@@ -3,6 +3,8 @@ import { useState } from "react";
 import { useTranslation } from "react-i18next";
 import { Button } from "../../Button";
 import { Link } from "../../Link";
+import { defaultGrid } from "../default-grid";
+import { isDesktopLayout } from "../utils";
 import { ReactComponent as GithubSvg } from "./github.svg";
 import { LanguageMenu } from "./LanguageMenu";
 import { MobileIcon } from "./MobileIcon";
@@ -33,17 +35,18 @@ export const Menu = () => {
 
 export const Root = styled.div`
   border-bottom: 1px solid ${(p) => p.theme.colors.primary100};
-  display: grid;
   position: relative;
-  grid-template:
-    "space-left topbar-left topbar-right space-right" 80px / 1fr 1000px minmax(
-      200px,
-      300px
-    )
-    1fr;
+  display: grid;
+  grid-template: "space-left main space-right" 80px / 1fr 1000px 1fr;
+
+  ${isDesktopLayout.query} {
+    grid-template:
+      "space-left main aside space-right" 80px / 1fr 1000px minmax(200px, 350px)
+      1fr;
+  }
 `;
 export const Left = styled.div`
-  grid-area: topbar-left;
+  grid-area: main;
   justify-content: space-between;
   display: flex;
   align-items: center;
@@ -52,7 +55,7 @@ export const Left = styled.div`
   flex-grow: 1;
 `;
 export const Right = styled.div`
-  grid-area: topbar-right;
+  grid-area: aside;
   display: flex;
   align-items: center;
   padding-left: 24px;

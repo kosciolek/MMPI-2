@@ -3,6 +3,7 @@ import { useTranslation } from "react-i18next";
 import { Link } from "react-router-dom";
 import { ReactComponent as CompactViewIcon } from "../../assets/compact-view.svg";
 import { Button } from "../Button";
+import { defaultGrid } from "../Layout/default-grid";
 import { Sidebar } from "../Sidebar";
 import { Txt } from "../Txt";
 import { ReactComponent as TestSvg } from "./homepage-test-icon.svg";
@@ -45,25 +46,18 @@ export const Homepage = () => {
 };
 
 export const Root = styled.div`
-  display: grid;
   height: 100%;
-  grid-template:
-    "space-left content sidebar space-right" 1fr / 1fr 1000px minmax(
-      200px,
-      300px
-    )
-    1fr;
+  ${defaultGrid}
 `;
 export const Content = styled.div`
   display: flex;
-  grid-area: content;
+  grid-area: main;
 
   justify-content: center;
   padding-top: 64px;
 `;
 export const WritingsWrapper = styled.div`
   display: flex;
-  grid-area: content;
   flex-direction: column;
   flex-basis: 50%;
   margin-right: 48px;

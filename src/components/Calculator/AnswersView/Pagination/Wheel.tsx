@@ -1,4 +1,5 @@
 import styled from "@emotion/styled";
+import { media } from "../../../../hooks/media";
 import { ReactComponent as WheelSvg } from "./pagination-wheel.svg";
 
 export const Wheel = () => (
@@ -10,7 +11,10 @@ export const Wheel = () => (
 );
 
 export const Root = styled.div`
-  display: flex;
+  ${media.md} {
+    display: flex;
+  }
+  display: none;
   align-items: center;
   & > * + * {
     margin-left: 4px;

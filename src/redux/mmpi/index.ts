@@ -1,5 +1,5 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
-import { Answers } from "../../mmpi-2/types";
+import { Answer, Answers } from "../../mmpi-2/types";
 import { questionCount } from "../../mmpi-2/utils";
 
 const initialState = {
@@ -12,7 +12,7 @@ export const mmpiSlice = createSlice({
   reducers: {
     answerSelected: (
       state,
-      { payload }: PayloadAction<{ questionId: number; answer: boolean }>
+      { payload }: PayloadAction<{ questionId: number; answer: Answer }>
     ) => {
       state.answers[payload.questionId] = payload.answer;
     },

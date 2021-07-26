@@ -8,9 +8,9 @@ export const getAnswersPerPage = (state: RootState) =>
 
 export const getFirstAnswer = (state: RootState) => {
   const { page, answersPerPage } = state.ui.answerView;
-  return Math.max(page * answersPerPage + 1, 1);
+  return Math.max(page * answersPerPage, 0);
 };
 export const getLastAnswer = (state: RootState) => {
   const { page, answersPerPage } = state.ui.answerView;
-  return Math.min(page * answersPerPage + answersPerPage + 1, questionCount);
+  return Math.min(page * answersPerPage + answersPerPage, questionCount - 1);
 };

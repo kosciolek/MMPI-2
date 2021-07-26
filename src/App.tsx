@@ -12,7 +12,9 @@ function App() {
   return (
     <>
       <Helmet>
-        <title>{t("MMIP - 2")} - {t("Homepage")}</title>
+        <title>
+          {t("MMPI - 2")} - {t("Homepage")}
+        </title>
       </Helmet>
       <GlobalStyles />
       <BrowserRouter>

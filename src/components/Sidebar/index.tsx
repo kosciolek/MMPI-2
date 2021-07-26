@@ -18,7 +18,7 @@ export const Root = styled.div`
     display: flex;
   }
 
-  grid-area: sidebar;
+  grid-area: aside;
   padding: 24px;
   height: 100%;
   flex-direction: column;

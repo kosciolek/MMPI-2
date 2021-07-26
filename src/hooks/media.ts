@@ -73,18 +73,17 @@ media.down.useQuery = (minWidth: number) => useQuery(minWidth, "max");
 export function makeSubquery(
   breakpointOrWidth: BreakpointKeys | number,
   type: "max" | "min" = "min"
-) {
+): { useQuery: () => boolean; query: string } {
   const source = type === "min" ? media : media.down;
   return typeof breakpointOrWidth === "string"
     ? {
-        useQuery:
-          source[
-            `use${firstToUppercase(breakpointOrWidth)}` as keyof typeof source
-          ],
+        useQuery: source[
+          `use${firstToUppercase(breakpointOrWidth)}` as keyof typeof source
+        ] as () => boolean,
         query: source[breakpointOrWidth],
       }
     : {
-        useQuery: (width: number) => source.useQuery(width),
-        query: (width: number) => source(width),
+        useQuery: () => source.useQuery(breakpointOrWidth as number),
+        query: source(breakpointOrWidth as number),
       };
 }

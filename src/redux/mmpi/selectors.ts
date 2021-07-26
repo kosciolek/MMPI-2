@@ -9,3 +9,5 @@ export const getUnfinishedAnswersCount = createSelector(
   [getSelf],
   (self) => self.answers.filter((answer) => answer === null).length
 );
+export const getAnswer = (index: number) => (state: RootState) =>
+  state.mmpi.answers[index];

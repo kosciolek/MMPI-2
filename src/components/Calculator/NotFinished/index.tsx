@@ -17,9 +17,9 @@ export const NotFinished = () => {
       <Trans t={t}>
         Missing <Txt color="primary">{{ answers: remainingAnswers }}</Txt>{" "}
         answers.{" "}
-        <Link transparent to="/calculator/answers">
-          <Txt color="primary">View answers.</Txt>
-        </Link>
+        <AnswersLink transparent to="/calculator/answers">
+          View answers.
+        </AnswersLink>
       </Trans>
     </Root>
   );
@@ -34,7 +34,6 @@ export const MainText = styled.div`
   color: ${(p) => p.theme.colors.primary600};
   margin: 32px 0 16px 0;
 `;
-export const Description = styled.div`
-  font-size: 18px;
-  color: ${(p) => p.theme.colors.neutral600};
+export const AnswersLink = styled(Link)`
+  color: ${(p) => p.theme.colors.primary};
 `;

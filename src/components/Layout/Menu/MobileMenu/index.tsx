@@ -1,9 +1,9 @@
 import styled from "@emotion/styled";
-import { useRef, useState } from "react";
+import { useRef } from "react";
 import { useTransition, animated } from "react-spring";
 import { useClickOutside } from "../../../../hooks/useClickOutside";
 import { $callback } from "../../../../hooks/utils";
-import {useAppDispatch, useAppSelector} from "../../../../redux/hooks";
+import { useAppDispatch, useAppSelector } from "../../../../redux/hooks";
 import { uiSlice } from "../../../../redux/ui";
 import { PortalTarget } from "../../../Portal/Target";
 import { LanguageMenu } from "../LanguageMenu";
@@ -57,6 +57,7 @@ export const Root = styled(animated.div)`
   height: 300px;
   background-color: white;
   box-shadow: 0 4px 4px #00000029;
+  z-index: 5;
 `;
 
 export const Items = styled.div`

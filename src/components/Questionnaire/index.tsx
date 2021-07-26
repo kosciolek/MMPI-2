@@ -1,5 +1,6 @@
-import {Redirect, Route, Switch, useRouteMatch,} from "react-router-dom";
-import {Question} from "./Question";
+import { Redirect, Route, Switch, useRouteMatch } from "react-router-dom";
+import { Finished } from "./Finished";
+import { Question } from "./Question";
 
 export const Questionnaire = () => {
   const { path } = useRouteMatch();
