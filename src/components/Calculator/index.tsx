@@ -1,42 +1,50 @@
 import styled from "@emotion/styled";
-import { useEffect, useLayoutEffect } from "react";
-import { Switch, Route, useHistory } from "react-router-dom";
+import { Trans, useTranslation } from "react-i18next";
+import {Redirect, useRouteMatch } from "react-router-dom";
+import { useNotification } from "../../hooks/notifications";
 import { useAppSelector } from "../../redux/hooks";
-import { getAnswersReady } from "../../redux/mmpi/selectors";
-import { AnswersView } from "./AnswersView";
-import { NotFinished } from "./NotFinished";
+import {getAnswersReady, getFinalScaleValues} from "../../redux/mmpi/selectors";
+import { Button } from "../Button";
+import { Grid } from "../Grid";
+import { Link } from "../Link";
+import { Sidebar } from "../Sidebar";
+import { Txt } from "../Txt";
+import { DownloadAnswersButton } from "./DownloadAnswersButton";
+import { UploadAnswersButton } from "./UploadAnswersButton";
+import { ReactComponent as EditAnswersIcon } from "./manual-questions.svg";
 
 export const Calculator = () => {
-  const history = useHistory();
+  const { t } = useTranslation();
+
+  const results = useAppSelector(getFinalScaleValues);
 
   const answersReady = useAppSelector(getAnswersReady);
-  /*useLayoutEffect(() => {
-    if (!answersReady) history.push("/calculator/not-finished");
-  }, [history, answersReady]);*/
+  if (!answersReady) return <Redirect to="./not-finished" />;
+
   return (
-    <Root>
-      <Area>
-        <Switch>
-          <Route path="/calculator/not-finished">
-            <NotFinished />
-          </Route>
-          <Route path="/calculator/answers">
-            <AnswersView />
-          </Route>
-          <Route>Calculator</Route>
-        </Switch>
-      </Area>
-    </Root>
+    <RootGrid container>
+      <Grid item xs={12} lg={9} style={{ padding: "24px" }}>
+        {JSON.stringify(results, null, 2)}
+      </Grid>
+      <Grid item xs={0} lg={3}>
+        <Sidebar>
+          <Link to="./answers">
+            <Button noPadding left={<EditAnswersIcon />} color="neutral600">
+              <span>
+                <Trans t={t}>
+                  Edit <Txt color="primary">answers</Txt>
+                </Trans>
+              </span>
+            </Button>
+          </Link>
+          <DownloadAnswersButton />
+          <UploadAnswersButton />
+        </Sidebar>
+      </Grid>
+    </RootGrid>
   );
 };
 
-export const Root = styled.div`
-  display: grid;
-  grid-area: main / sidebar;
-  grid-template:
-    "space-left main sidebar space-right" 1fr / 1fr 1000px minmax(200px, 350px)
-    1fr;
-`;
-export const Area = styled.div`
-  grid-area: main;
+export const RootGrid = styled(Grid)`
+  height: 100%;
 `;

@@ -1,11 +1,18 @@
 import styled from "@emotion/styled";
+import { Grid } from "../Grid";
+import { contentWidth } from "./utils";
 import { ReactComponent as WaveSvg } from "./wave.svg";
 
 export const Wave = () => (
   <Root>
-    <Line />
+    <Grid container area="main">
+      <Grid item xs={0} lg={9} />
+      <Grid item xs={0} lg={3}>
+        <Line />
+      </Grid>
+    </Grid>
     <WaveContainer>
-      <StyledWaveSvg />
+      <StyledWaveSvg preserveAspectRatio="none" />
       <Space />
     </WaveContainer>
   </Root>
@@ -13,17 +20,11 @@ export const Wave = () => (
 
 export const Root = styled.div`
   display: grid;
-
-  grid-template:
-    "space-left main sidebar space-right" 250px / 1fr 1000px minmax(
-      200px,
-      300px
-    )
-    1fr;
+  grid-template: "space-l main space-r" 250px / 1fr ${contentWidth} 1fr;
 `;
 export const Line = styled.div`
-  grid-area: sidebar;
   border-left: 1px solid ${(p) => p.theme.colors.primary100};
+  height: 100%;
 `;
 export const WaveContainer = styled.div`
   grid-row: 1;
@@ -31,12 +32,13 @@ export const WaveContainer = styled.div`
   overflow-x: hidden;
   display: flex;
   flex-direction: column;
-  grid-column: space-left / space-right;
+  grid-column: space-l / space-r;
 `;
 
 // @ts-ignore
 export const StyledWaveSvg = styled(WaveSvg)`
   display: block;
+  min-width: 100%;
 `;
 
 export const Space = styled.div`

@@ -1,14 +1,17 @@
 import { Helmet } from "react-helmet";
 import { useTranslation } from "react-i18next";
-import { BrowserRouter, Redirect, Route, Switch } from "react-router-dom";
-import { Calculator } from "./components/Calculator";
+import { Redirect, Route, Switch, useLocation } from "react-router-dom";
+import { Box } from "./components/Box";
+import { CalculatorRouting } from "./components/Calculator/routing";
+import { Contact } from "./components/Contact";
 import { Homepage } from "./components/Homepage";
-import { Layout } from "./components/Layout";
+import { Notifications } from "./components/Notifications";
 import { Questionnaire } from "./components/Questionnaire";
 import { GlobalStyles } from "./GlobalStyles";
 
 function App() {
   const { t } = useTranslation();
+  const { pathname } = useLocation();
   return (
     <>
       <Helmet>
@@ -17,26 +20,15 @@ function App() {
         </title>
       </Helmet>
       <GlobalStyles />
-      <BrowserRouter>
-        <Switch>
-          <Route path="/questionnaire">
-            <Layout>
-              <Questionnaire />
-            </Layout>
-          </Route>
-          <Route path="/home">
-            <Layout>
-              <Homepage />
-            </Layout>
-          </Route>
-          <Route path="/calculator">
-            <Layout>
-              <Calculator />
-            </Layout>
-          </Route>
-          <Redirect to="/home" />
-        </Switch>
-      </BrowserRouter>
+      <Notifications />
+      <Switch>
+        <Redirect from="/:url*(/+)" to={pathname.slice(0, -1)} />
+        <Route path="/questionnaire" component={Questionnaire} />
+        <Route path="/home" component={Homepage} />
+        <Route path="/calculator" component={CalculatorRouting} />
+        <Route path="/contact" component={Contact} />
+        <Redirect to="/home" />
+      </Switch>
     </>
   );
 }

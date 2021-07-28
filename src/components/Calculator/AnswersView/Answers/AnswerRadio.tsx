@@ -1,7 +1,8 @@
-import styled from "@emotion/styled";
+import styled from "@emotion/styled/macro";
 import { useTranslation } from "react-i18next";
 import { useDispatch } from "react-redux";
-import { useId } from "../../../../hooks/useId";
+import { media } from "../../../../hooks/media";
+import { useId } from "../../../../hooks/id";
 import { Answer } from "../../../../mmpi-2/types";
 import { useAppSelector } from "../../../../redux/hooks";
 import { mmpiSlice } from "../../../../redux/mmpi";
@@ -56,18 +57,32 @@ export const AnswerRadio = ({ index }: AnswerRadioProps) => {
 };
 
 export const Root = styled.div`
-  display: flex;
+  display: grid;
   align-items: center;
-  flex-wrap: wrap;
-  & > * + * {
-    margin-left: 16px;
+  grid-row-gap: 8px;
+  grid-column-gap: 16px;
+  user-select: none;
+  ${media.sm} {
+    grid-auto-flow: column;
   }
+`;
+export const Label = styled.label`
+  text-transform: uppercase;
+  font-size: 16px;
+  cursor: inherit;
+  color: ${(p) => p.theme.colors.primary};
+  margin-left: 8px;
 `;
 export const Pair = styled.div`
   display: flex;
   align-items: center;
   flex-wrap: nowrap;
   cursor: pointer;
+
+  &:active ${Label} {
+    transition: transform 180ms;
+    transform: translateY(3px);
+  }
 `;
 export const Input = styled.input`
   border-radius: 50%;
@@ -78,11 +93,4 @@ export const Input = styled.input`
   &:checked {
     background-color: ${(p) => p.theme.colors.primary};
   }
-`;
-export const Label = styled.label`
-  text-transform: uppercase;
-  font-size: 14px;
-  cursor: inherit;
-  color: ${(p) => p.theme.colors.primary};
-  margin-left: 8px;
 `;

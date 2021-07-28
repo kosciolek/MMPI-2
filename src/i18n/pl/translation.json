@@ -1,18 +1,28 @@
 {
   "MMPI - 2": "MMPI - 2",
   "Homepage": "Strona główna",
+  "Yes": "Tak",
+  "No": "Nie",
+  "View <1>results</1>": "Widok <1>wyników</1>",
+  "Full <1>view</1>": "Pełny <1>widok</1>",
+  "Compact <1>view</1>": "Kompaktowy <1>widok</1>",
   "<0>{{first}} - {{last}}</0> out of <3>{{questionCount}}</3>": "<0>{{first}} - {{last}}</0> z <3>{{questionCount}}</3>",
+  "answers": "ODPOWIEDZI",
+  "<0>Download</0> answers": "<0>Pobierz</0> odpowiedzi",
+  "Edit <1>answers</1>": "Edytuj <1>odpowiedzi</1>",
   "The questionnaire is not finished": "Kwestionariusz nie został ukończony",
   "Missing <1>{{answers}}</1> answers": {
     " <5>View answers": {
       "</5>": "Brakuje <1>{{answers}}</1> odpowiedzi. <5>Sprawdź odpowiedzi.</5>"
     }
   },
+  "Invalid answers file": "Plik odpowiedzi jest niepoprawny.",
+  "<0>Upload</0> answers": "<0>Wgraj</0> odpowiedzi",
   "Minnesota Multiphasic Personality Inventory - 2": "Minnesocki Wielowymiarowy Inwentarz Osobowości - 2",
   "Questionnaire": "Kwestionariusz",
   "Calculator": "Kalkulator",
   "contact": "Kontakt",
   "Language": "Język",
-  "Questionnaire completed": "",
-  "View results": ""
+  "Questionnaire completed": "Kwestionariusz został ukończony",
+  "View results": "Zobacz wyniki"
 }

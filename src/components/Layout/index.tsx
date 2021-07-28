@@ -1,12 +1,7 @@
 import styled from "@emotion/styled";
 import { FC } from "react";
-import { Button } from "../Button";
-import { Sidebar } from "../Sidebar";
-import { Txt } from "../Txt";
-import { OuterGrid } from "./Grid";
 import { Menu } from "./Menu";
 import { Wave } from "./Wave";
-import { ReactComponent as CompactViewIcon } from "../../assets/compact-view.svg";
 
 export const Layout: FC = ({ children }) => (
   <Root>

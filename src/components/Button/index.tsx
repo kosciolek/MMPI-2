@@ -30,7 +30,7 @@ export const Root = styled.button<{
   display: inline-flex;
   align-items: center;
   text-transform: uppercase;
-  font-weight: bold;
+  font-weight: 500;
 
   padding: 8px 16px;
 

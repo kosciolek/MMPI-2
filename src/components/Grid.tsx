@@ -1,13 +1,16 @@
 import { css } from "@emotion/react";
 import styled from "@emotion/styled";
-import {breakpoints} from "../hooks/media";
+import { breakpoints, Breakpoints } from "../hooks/media";
 
 export const Grid = styled.div<
   {
     container?: boolean;
     item?: boolean;
-  } & keyof Partial<typeof breakpoints>
+    area?: string;
+  } & Partial<Record<keyof Breakpoints, number>>
 >`
+  grid-area: ${(p) => p.area};
+
   ${(p) =>
     p.container &&
     css`

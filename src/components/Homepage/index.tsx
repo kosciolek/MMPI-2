@@ -1,53 +1,54 @@
 import styled from "@emotion/styled/macro";
 import { useTranslation } from "react-i18next";
 import { Link } from "react-router-dom";
-import { ReactComponent as CompactViewIcon } from "../../assets/compact-view.svg";
 import { Button } from "../Button";
-import { defaultGrid } from "../Layout/default-grid";
+import { Grid } from "../Grid";
+import { Layout } from "../Layout";
+import { contentWidth } from "../Layout/utils";
 import { Sidebar } from "../Sidebar";
-import { Txt } from "../Txt";
 import { ReactComponent as TestSvg } from "./homepage-test-icon.svg";
 
 export const Homepage = () => {
   const { t } = useTranslation();
   return (
-    <Root>
-      <Content>
-        <WritingsWrapper>
-          <Title>{t("MMPI - 2")}</Title>
-          <Bar />
-          <Subtitle>
-            {t("Minnesota Multiphasic Personality Inventory - 2")}
-          </Subtitle>
-          <Buttons>
-            <Link to="/questionnaire/">
-              <Button tabIndex={-1} size="big" variant="filled">
-                {t("Questionnaire")}
-              </Button>
-            </Link>
-            <Link to="/calculator/">
-              <Button tabIndex={-1} size="big" variant="outlined">
-                {t("Calculator")}
-              </Button>
-            </Link>
-          </Buttons>
-        </WritingsWrapper>
-        <StyledTestSvg />
-      </Content>
-      <Sidebar>
-        <Button noPadding left={<CompactViewIcon />} color="neutral600">
-          <span>
-            Widok <Txt color="primary">kompaktowy</Txt>
-          </span>
-        </Button>
-      </Sidebar>
-    </Root>
+    <Layout>
+      <Root container>
+        <Grid item xs={12} md={9}>
+          <Content>
+            <WritingsWrapper>
+              <Title>{t("MMPI - 2")}</Title>
+              <Bar />
+              <Subtitle>
+                {t("Minnesota Multiphasic Personality Inventory - 2")}
+              </Subtitle>
+              <Buttons>
+                <Link to="/questionnaire/">
+                  <Button tabIndex={-1} size="big" variant="filled">
+                    {t("Questionnaire")}
+                  </Button>
+                </Link>
+                <Link to="/calculator/">
+                  <Button tabIndex={-1} size="big" variant="outlined">
+                    {t("Calculator")}
+                  </Button>
+                </Link>
+              </Buttons>
+            </WritingsWrapper>
+            <StyledTestSvg />
+          </Content>
+        </Grid>
+        <Grid item xs={0} md={3}>
+          <Sidebar />
+        </Grid>
+      </Root>
+    </Layout>
   );
 };
 
-export const Root = styled.div`
+export const Root = styled(Grid)`
+  margin: 0 auto;
+  width: ${contentWidth};
   height: 100%;
-  ${defaultGrid}
 `;
 export const Content = styled.div`
   display: flex;
@@ -67,10 +68,10 @@ export const WritingsWrapper = styled.div`
   }
 `;
 export const Buttons = styled.div`
-  display: flex;
-  & > * + * {
-    margin-left: 32px;
-  }
+  display: grid;
+  grid-gap: 32px;
+  grid-auto-flow: column;
+  justify-content: flex-start;
 `;
 export const Title = styled.h1`
   font-size: 100px;

@@ -1,10 +1,9 @@
 import styled from "@emotion/styled";
-import { useState } from "react";
 import { useTranslation } from "react-i18next";
 import { Button } from "../../Button";
+import { Grid } from "../../Grid";
 import { Link } from "../../Link";
-import { defaultGrid } from "../default-grid";
-import { isDesktopLayout } from "../utils";
+import { contentWidth, isDesktopLayout } from "../utils";
 import { ReactComponent as GithubSvg } from "./github.svg";
 import { LanguageMenu } from "./LanguageMenu";
 import { MobileIcon } from "./MobileIcon";
@@ -14,20 +13,33 @@ export const Menu = () => {
   const { t } = useTranslation();
   return (
     <Root>
-      <Left>
-        <MobileIcon />
-        <LanguageMenu />
-        <Link transparent to="/contact">
-          <Contact>{t("contact")}</Contact>
-        </Link>
-      </Left>
-      <Right>
-        <Link transparent to="//github.com/kosciolek/MMIP-2" target="_blank">
-          <GithubButton>
-            <StyledGithubSvg />
-          </GithubButton>
-        </Link>
-      </Right>
+      <Grid container area="main">
+        {/* todo */}
+        <Grid item xs={12} lg={9}>
+          <Left>
+            <MobileIcon />
+            <LanguageMenuWrapper>
+              <LanguageMenu />
+            </LanguageMenuWrapper>
+            <Link transparent to="/contact">
+              <Contact>{t("contact")}</Contact>
+            </Link>
+          </Left>
+        </Grid>
+        <Grid item lg={3} xs={0}>
+          <Right>
+            <Link
+              transparent
+              to="//github.com/kosciolek/MMIP-2"
+              target="_blank"
+            >
+              <GithubButton>
+                <StyledGithubSvg />
+              </GithubButton>
+            </Link>
+          </Right>
+        </Grid>
+      </Grid>
       <MobileMenu />
     </Root>
   );
@@ -37,25 +49,17 @@ export const Root = styled.div`
   border-bottom: 1px solid ${(p) => p.theme.colors.primary100};
   position: relative;
   display: grid;
-  grid-template: "space-left main space-right" 80px / 1fr 1000px 1fr;
-
-  ${isDesktopLayout.query} {
-    grid-template:
-      "space-left main aside space-right" 80px / 1fr 1000px minmax(200px, 350px)
-      1fr;
-  }
+  grid-template: "space-left main space-right" 80px / 1fr ${contentWidth} 1fr;
 `;
 export const Left = styled.div`
-  grid-area: main;
   justify-content: space-between;
   display: flex;
   align-items: center;
   height: 100%;
-  margin-right: 24px;
   flex-grow: 1;
+  margin: 0 24px;
 `;
 export const Right = styled.div`
-  grid-area: aside;
   display: flex;
   align-items: center;
   padding-left: 24px;
@@ -73,4 +77,11 @@ export const Contact = styled(Button)`
   font-size: 14px;
   font-weight: 500;
   padding: 0;
+`;
+export const LanguageMenuWrapper = styled.div`
+  display: none;
+
+  ${isDesktopLayout.query} {
+    display: block;
+  }
 `;

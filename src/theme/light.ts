@@ -27,5 +27,6 @@ export const light = {
     neutral900: "#0d0d0d",
 
     errorLight: "#FCDBDE",
+    error: "#ef1313",
   },
 };

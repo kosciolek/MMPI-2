@@ -14,3 +14,5 @@ export const getLastAnswer = (state: RootState) => {
   const { page, answersPerPage } = state.ui.answerView;
   return Math.min(page * answersPerPage + answersPerPage, questionCount - 1);
 };
+export const getAnswerCompactView = (state: RootState) =>
+  state.ui.answerView.compactView;

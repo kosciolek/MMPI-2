@@ -1,5 +1,7 @@
-import styled from "@emotion/styled";
+import styled from "@emotion/styled/macro";
 import { useTranslation } from "react-i18next";
+import { useAppDispatch } from "../../../../redux/hooks";
+import { mmpiSlice } from "../../../../redux/mmpi";
 import { AnswerRadio } from "./AnswerRadio";
 
 export type AnswerProps = {
@@ -8,10 +10,16 @@ export type AnswerProps = {
 
 export const Answer = ({ index }: AnswerProps) => {
   const { t } = useTranslation("questions");
+  const dispatch = useAppDispatch();
+
+  const onTextClick = () => {
+    dispatch(mmpiSlice.actions.toggleQuestion(index));
+  };
+
   return (
     <Root>
       <AnswerRadio index={index} />
-      <Text>
+      <Text onClick={onTextClick}>
         {index + 1}. {t(`${index}`)}
       </Text>
     </Root>
@@ -24,9 +32,11 @@ export const Root = styled.div`
   align-items: center;
 `;
 
-export const Text = styled.span`
+export const Text = styled.div`
   margin-left: 16px;
   color: ${(p) => p.theme.colors.primary700};
-  font-weight: 700;
-  font-size: 16px;
+  font-weight: 500;
+  font-size: 18px;
+  cursor: pointer;
+  user-select: none;
 `;

@@ -1,16 +1,20 @@
 import styled from "@emotion/styled";
-import { FC } from "react";
+import { ReactNode } from "react";
 import { media } from "../../hooks/media";
 import { PortalSource } from "../Portal/Source";
 
-export const Sidebar: FC = ({ children }) => {
-  return (
-    <Root>
-      {children}
-      <PortalSource id="global-menu">{children}</PortalSource>
-    </Root>
-  );
-};
+export const Sidebar = ({
+  children,
+  mobile,
+}: {
+  children?: ReactNode;
+  mobile?: ReactNode;
+}) => (
+  <Root>
+    {children}
+    <PortalSource id="global-menu">{mobile ?? children}</PortalSource>
+  </Root>
+);
 
 export const Root = styled.div`
   display: none;
@@ -26,6 +30,6 @@ export const Root = styled.div`
   border-left: 1px solid ${(p) => p.theme.colors.primary100};
 
   & > * + * {
-    margin-top: 8px;
+    margin-top: 16px;
   }
 `;

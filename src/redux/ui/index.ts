@@ -6,6 +6,7 @@ export const initialState = {
   answerView: {
     page: 0,
     answersPerPage: 25,
+    compactView: false,
   },
 };
 
@@ -29,6 +30,9 @@ export const uiSlice = createSlice({
     },
     prevPage: (state) => {
       state.answerView.page = Math.max(0, state.answerView.page - 1);
+    },
+    toggleAnswerCompactView: (state) => {
+      state.answerView.compactView = !state.answerView.compactView;
     },
   },
   initialState,

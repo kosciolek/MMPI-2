@@ -31,7 +31,7 @@ export const Root = styled(animated.button)`
   ${isDesktopLayout.query} {
     display: none;
   }
-  
+
   height: 32px;
   width: 32px;
 `;

@@ -1,6 +1,7 @@
 import styled from "@emotion/styled";
 import { Link as RouterLink } from "react-router-dom";
 import isPropValid from "@emotion/styled/macro";
+import { iif } from "../utils/css";
 
 export const Link = styled(RouterLink, {
   shouldForwardProp(propName: PropertyKey) {
@@ -8,5 +9,10 @@ export const Link = styled(RouterLink, {
     return isPropValid(propName) && propName !== "transparent";
   },
 })<{ transparent?: boolean }>`
-  display: ${(p) => (p.transparent ? "contents" : "initial")};
+  ${iif("transparent")} {
+    display: contents;
+    & > * {
+      margin: inherit;
+    }
+  }
 `;

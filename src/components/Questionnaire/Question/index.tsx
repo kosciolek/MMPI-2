@@ -2,8 +2,9 @@ import styled from "@emotion/styled";
 import { useDispatch } from "react-redux";
 import { useParams, useRouteMatch, Redirect } from "react-router-dom";
 import { questionCount } from "../../../mmpi-2/utils";
-import {mmpiSlice} from "../../../redux/mmpi";
+import { mmpiSlice } from "../../../redux/mmpi";
 import { Button } from "../../Button";
+import { contentWidth } from "../../Layout/utils";
 import { Link } from "../../Link";
 
 /* Todo make links relative */
@@ -57,20 +58,15 @@ export const Question = () => {
 };
 
 export const Root = styled.div`
-  display: grid;
-  grid-template:
-    "space-left main sidebar space-right" 80px / 1fr 1000px minmax(200px, 350px)
-    1fr;
+  margin: 0 auto;
+  width: ${contentWidth};
 `;
-
 export const Contents = styled.div`
-  grid-column: main / sidebar;
   display: flex;
   flex-direction: column;
   align-items: center;
   margin-top: 80px;
 `;
-
 export const Counter = styled.div`
   font-weight: bold;
   font-size: 18px;
@@ -82,6 +78,7 @@ export const QuestionText = styled.div`
   font-size: 44px;
   font-weight: bold;
   text-shadow: 0 2px 4px rgba(0, 0, 0, 0.18);
+  text-align: center;
 `;
 export const Answers = styled.div`
   margin-top: 80px;

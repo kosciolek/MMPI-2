@@ -1,18 +1,28 @@
 {
   "MMPI - 2": "MMPI - 2",
   "Homepage": "Homepage",
+  "Yes": "Yes",
+  "No": "No",
+  "View <1>results</1>": "View <1>results</1>",
+  "Full <1>view</1>": "Full <1>view</1>",
+  "Compact <1>view</1>": "Compact <1>view</1>",
   "<0>{{first}} - {{last}}</0> out of <3>{{questionCount}}</3>": "<0>{{first}} - {{last}}</0> out of <3>{{questionCount}}</3>",
+  "answers": "ANSWERS",
+  "<0>Download</0> answers": "<0>Download</0> answers",
+  "Edit <1>answers</1>": "Edit <1>answers</1>",
   "The questionnaire is not finished": "The questionnaire is not finished",
   "Missing <1>{{answers}}</1> answers": {
     " <5>View answers": {
       "</5>": "Missing <1>{{answers}}</1> answers. <5>View answers.</5>"
     }
   },
+  "Invalid answers file": "Invalid answers file.",
+  "<0>Upload</0> answers": "<0>Upload</0> answers",
   "Minnesota Multiphasic Personality Inventory - 2": "Minnesota Multiphasic Personality Inventory - 2",
   "Questionnaire": "Questionnaire",
   "Calculator": "Calculator",
   "contact": "Contact",
   "Language": "Language",
-  "Questionnaire completed": "",
-  "View results": ""
+  "Questionnaire completed": "Questionnaire completed",
+  "View results": "View results"
 }
