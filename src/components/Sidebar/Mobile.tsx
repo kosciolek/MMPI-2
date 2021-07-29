@@ -1,41 +1,20 @@
+import React, { ReactNode, useEffect, useRef } from "react";
+import { animated, useTransition } from "react-spring";
 import styled from "@emotion/styled";
-import { forwardRef, useEffect, useRef } from "react";
-import { useTransition, animated } from "react-spring";
-import { media } from "../../../../hooks/media";
-import { useBodyLock } from "../../../../hooks/useBodyLock";
-import { useClickOutside } from "../../../../hooks/useClickOutside";
-import { $callback } from "../../../../hooks/utils";
-import { useAppDispatch, useAppSelector } from "../../../../redux/hooks";
-import { uiSlice } from "../../../../redux/ui";
-import { PortalTarget } from "../../../Portal/Target";
-import { LanguageMenu } from "../LanguageMenu";
-import { MobileIcon } from "../MobileIcon";
+import { media } from "../../hooks/media";
+import { useBodyLock } from "../../hooks/useBodyLock";
+import { useClickOutside } from "../../hooks/useClickOutside";
+import { useAppDispatch, useAppSelector } from "../../redux/hooks";
+import { uiSlice } from "../../redux/ui";
+import { LanguageMenu } from "../Layout/Menu/LanguageMenu";
+import { MobileIcon } from "../Layout/Menu/MobileIcon";
+import ReactDOM from "react-dom";
 
-export const MobileMenu = () => {
+export const Mobile = ({ children }: { children?: ReactNode }) => {
+  const dispatch = useAppDispatch();
   const _mobileOpen = useAppSelector((state) => state.ui.mobileMenuOpen);
   const isLg = media.useLg();
   const mobileOpen = _mobileOpen && !isLg;
-  const dispatch = useAppDispatch();
-
-  const rootRef = useRef<HTMLDivElement | null>(null);
-  /*useClickOutside(
-    [rootRef],
-    $callback(() => {
-      console.log("outside", mobileOpen);
-      if (mobileOpen) dispatch(uiSlice.actions.setMobileMenuOpen(false));
-    }, [mobileOpen])
-  );*/
-  console.log('menu render')
-
-  useEffect(() => {
-    const listener = () => {
-      console.log("outside", mobileOpen);
-      if (mobileOpen) dispatch(uiSlice.actions.setMobileMenuOpen(false));
-    };
-    console.log("rebinding", mobileOpen);
-    window.addEventListener("click", listener);
-    return () => window.removeEventListener("click", listener);
-  }, [mobileOpen]);
 
   const transition = useTransition(mobileOpen, {
     from: { opacity: 0, transform: "translateX(-24px)" },
@@ -48,24 +27,34 @@ export const MobileMenu = () => {
     },
   });
 
+  const rootRef = useRef<HTMLDivElement | null>(null);
+  useEffect(() => {
+    const listener = () => {
+      console.log("listener", mobileOpen);
+      if (mobileOpen) dispatch(uiSlice.actions.setMobileMenuOpen(false));
+    };
+    window.addEventListener("click", listener);
+    return () => window.removeEventListener("click", listener);
+  }, [mobileOpen]);
+
   useBodyLock(mobileOpen);
 
   return (
     <>
       {transition(
         (styles, isOpen) =>
-          isOpen && (
+          isOpen &&
+          ReactDOM.createPortal(
             <Root style={styles} ref={rootRef}>
               <IconContainer>
                 <MobileIcon />
               </IconContainer>
-              <Items>
-                <PortalTarget id="global-menu" />
-              </Items>
+              <Items>{children}</Items>
               <LanguageMenuWrapper>
                 <LanguageMenu />
               </LanguageMenuWrapper>
-            </Root>
+            </Root>,
+            document.body
           )
       )}
     </>

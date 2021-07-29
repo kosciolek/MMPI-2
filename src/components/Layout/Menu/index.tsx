@@ -13,7 +13,6 @@ import { contentWidth, isDesktopLayout } from "../utils";
 import { ReactComponent as GithubSvg } from "./github.svg";
 import { LanguageMenu } from "./LanguageMenu";
 import { MobileIcon } from "./MobileIcon";
-import { MobileMenu } from "./MobileMenu";
 
 export const Menu = () => {
   const { t } = useTranslation();
@@ -43,7 +42,6 @@ export const Menu = () => {
           </Right>
         </Grid>
       </Grid>
-      <MobileMenu />
     </Root>
   );
 };

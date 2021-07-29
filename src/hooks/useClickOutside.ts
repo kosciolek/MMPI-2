@@ -1,18 +1,20 @@
 import { RefObject, useEffect } from "react";
+import { useWindowEvent } from "./useWindowEvent";
+import { $callback } from "./utils";
 
 export const useClickOutside = (
   ignoredRefs: RefObject<HTMLElement>[],
-  callback: (e: MouseEvent) => void,
-  enabled = true
+  callback: (e: MouseEvent) => void
 ) => {
-  useEffect(() => {
-    if (!enabled) return () => {};
-    const listener = (e: MouseEvent) => {
-      if (!ignoredRefs.some((ignored) => ignored.current?.contains(e.target as HTMLElement))) {
-        callback(e);
-      }
-    };
-    document.addEventListener("click", listener);
-    return () => document.removeEventListener("click", listener);
-  }, [callback, enabled, ignoredRefs]);
+  useWindowEvent(
+    "click",
+    $callback(
+      (e: MouseEvent) => {
+        if (!ignoredRefs.some((ignored) => ignored.current?.contains(e.target as HTMLElement))) {
+          callback(e);
+        }
+      },
+      [callback, ignoredRefs]
+    )
+  );
 };
