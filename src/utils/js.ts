@@ -9,10 +9,7 @@ export const joinPaths = (...paths: string[]) => {
 
 export const downloadString = (string: string, filename: string, datatype = "application/json") => {
   const element = document.createElement("a");
-  element.setAttribute(
-    "href",
-    `data:${datatype};charset=utf-8,${encodeURIComponent(string)}`
-  );
+  element.setAttribute("href", `data:${datatype};charset=utf-8,${encodeURIComponent(string)}`);
   element.setAttribute("download", filename);
   element.style.display = "none";
   document.body.appendChild(element);

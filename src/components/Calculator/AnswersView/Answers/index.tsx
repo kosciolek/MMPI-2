@@ -9,6 +9,7 @@ import {
 import { Divider } from "../../../Divider";
 import { Grid } from "../../../Grid";
 import { Answer, Text } from "./Answer";
+import { PolishWarning } from "./PolishWarning";
 
 export const Answers = memo(() => {
   const first = useAppSelector(getFirstAnswer);
@@ -20,9 +21,10 @@ export const Answers = memo(() => {
   return (
     <Root>
       <Grid container>
+        <PolishWarning />
         {Array.from({ length: count }).map((_, i) => (
-          /* eslint-disable-next-line react/no-array-index-key */
           <StyledGrid
+            /* eslint-disable-next-line react/no-array-index-key */
             key={`${first}-${i}`}
             item
             xs={12}
@@ -42,7 +44,7 @@ export const Root = styled.div`
 `;
 
 export const StyledGrid = styled(Grid)`
-  &:nth-child(odd) ${Text} {
+  &:nth-of-type(odd) ${Text} {
     color: ${(p) => p.theme.colors.neutral600};
   }
 `;

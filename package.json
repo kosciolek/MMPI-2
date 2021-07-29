@@ -6,6 +6,7 @@
   "dependencies": {
     "@emotion/react": "^11.4.0",
     "@emotion/styled": "^11.3.0",
+    "@popperjs/core": "^2.9.2",
     "@reduxjs/toolkit": "^1.6.1",
     "@types/react-router-dom": "^5.1.8",
     "i18next": "^20.3.4",
@@ -15,6 +16,7 @@
     "react-dom": "^17.0.2",
     "react-helmet": "^6.1.0",
     "react-i18next": "^11.11.3",
+    "react-popper": "^2.2.5",
     "react-redux": "^7.2.4",
     "react-router-dom": "^5.2.0",
     "react-spring": "^9.2.4",
@@ -66,6 +68,7 @@
     "eslint-plugin-jsx-a11y": "^6.4.1",
     "eslint-plugin-react": "^7.24.0",
     "eslint-plugin-react-hooks": "^4.2.0",
+    "firebase-tools": "^9.16.0",
     "husky": "^7.0.1",
     "i18next-parser": "^4.2.0",
     "prettier": "^2.3.2",

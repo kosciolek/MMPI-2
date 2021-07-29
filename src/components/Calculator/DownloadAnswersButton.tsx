@@ -18,12 +18,7 @@ export const DownloadAnswersButton = () => {
   };
 
   return (
-    <Button
-      noPadding
-      left={<DownloadIcon />}
-      color="neutral600"
-      onClick={handleDownloadClick}
-    >
+    <Button noPadding left={<DownloadIcon />} color="neutral600" onClick={handleDownloadClick}>
       <span>
         <Trans t={t}>
           <Txt color="primary">Download</Txt> answers

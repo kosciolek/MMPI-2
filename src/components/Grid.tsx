@@ -25,9 +25,7 @@ export const Grid = styled.div<
       .map(
         (size) =>
           css`
-            @media (min-width: ${breakpoints[
-                size as keyof typeof breakpoints
-              ]}px) {
+            @media (min-width: ${breakpoints[size as keyof typeof breakpoints]}px) {
               display: ${p[size as keyof typeof p] === 0 ? "none" : "block"};
               grid-column: span ${p[size as keyof typeof p]};
             }

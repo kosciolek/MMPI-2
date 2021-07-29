@@ -17,6 +17,7 @@ const styles = (theme: AppTheme) => css`
     font-weight: ${theme.font.weight};
     line-height: 1.4;
     overflow-y: scroll;
+    color: ${theme.colors.neutral700};
   }
 
   input {

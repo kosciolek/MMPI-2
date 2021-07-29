@@ -14,8 +14,7 @@ const TIMEOUT = 6000;
 export const Notifications = () => {
   const [shown, setShown] = useState<NotificationWithId[]>([]);
 
-  const cancel = (id: string) =>
-    setShown((prev) => prev.filter((notif) => notif.id !== id));
+  const cancel = (id: string) => setShown((prev) => prev.filter((notif) => notif.id !== id));
 
   const makeId = useIds();
   useReadNotifications(

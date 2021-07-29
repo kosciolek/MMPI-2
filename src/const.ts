@@ -1,3 +1,4 @@
 export const zIndex = {
-  notificationLayer: 50
-}
+  notificationLayer: 50,
+  selectPopup: 100,
+};

@@ -10,6 +10,7 @@ import { Sidebar } from "../../Sidebar";
 import { Txt } from "../../Txt";
 import { DownloadAnswersButton } from "../DownloadAnswersButton";
 import { UploadAnswersButton } from "../UploadAnswersButton";
+import { AnswersPerPageSelect } from "./AnswersPerPageSelect";
 import { ReactComponent as ResultsIcon } from "./back-to-results.svg";
 
 export const AnswersSidebar = () => {
@@ -30,6 +31,8 @@ export const AnswersSidebar = () => {
           </span>
         </Button>
       </Link>
+      <DownloadAnswersButton />
+      <UploadAnswersButton />
       {isLg && (
         <Button
           noPadding
@@ -50,8 +53,8 @@ export const AnswersSidebar = () => {
           </span>
         </Button>
       )}
-      <DownloadAnswersButton />
-      <UploadAnswersButton />
+
+      <AnswersPerPageSelect />
     </Sidebar>
   );
 };

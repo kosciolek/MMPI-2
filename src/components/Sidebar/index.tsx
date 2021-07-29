@@ -3,13 +3,7 @@ import { ReactNode } from "react";
 import { media } from "../../hooks/media";
 import { PortalSource } from "../Portal/Source";
 
-export const Sidebar = ({
-  children,
-  mobile,
-}: {
-  children?: ReactNode;
-  mobile?: ReactNode;
-}) => (
+export const Sidebar = ({ children, mobile }: { children?: ReactNode; mobile?: ReactNode }) => (
   <Root>
     {children}
     <PortalSource id="global-menu">{mobile ?? children}</PortalSource>

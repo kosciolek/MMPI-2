@@ -2,9 +2,7 @@ import styled from "@emotion/styled";
 import { Trans, useTranslation } from "react-i18next";
 import { Redirect } from "react-router-dom";
 import { useAppSelector } from "../../../redux/hooks";
-import {
-  getUnfinishedAnswersCount,
-} from "../../../redux/mmpi/selectors";
+import { getUnfinishedAnswersCount } from "../../../redux/mmpi/selectors";
 import { Link } from "../../Link";
 import { Txt } from "../../Txt";
 import { ReactComponent as NotFinishedSvg } from "./test-not-finished.svg";
@@ -20,8 +18,7 @@ export const NotFinished = () => {
       <div>{t("Fill all the answers to view results.")}</div>
       <div>
         <Trans t={t}>
-          Missing <Txt color="primary">{{ answers: remainingAnswers }}</Txt>{" "}
-          answers.
+          Missing <Txt color="primary">{{ answers: remainingAnswers }}</Txt> answers.
           <AnswersLink transparent to="/calculator/answers">
             {" "}
             View answers.

@@ -13,9 +13,7 @@ export type NotificationEvents = {
 
 const emitter = mitt<NotificationEvents>();
 
-export const useReadNotifications = (
-  onNotification: (args: Notification) => void
-) => {
+export const useReadNotifications = (onNotification: (args: Notification) => void) => {
   useEffect(() => {
     emitter.on("notification", onNotification);
     return () => emitter.off("notification", onNotification);
@@ -23,8 +21,4 @@ export const useReadNotifications = (
 };
 
 export const useNotification = () =>
-  useCallback(
-    (notification: Notification) =>
-      emitter.emit("notification", notification),
-    []
-  );
+  useCallback((notification: Notification) => emitter.emit("notification", notification), []);

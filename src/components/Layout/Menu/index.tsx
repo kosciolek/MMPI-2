@@ -28,11 +28,7 @@ export const Menu = () => {
         </Grid>
         <Grid item lg={3} xs={0}>
           <Right>
-            <Link
-              transparent
-              to="//github.com/kosciolek/MMIP-2"
-              target="_blank"
-            >
+            <Link transparent to="//github.com/kosciolek/MMIP-2" target="_blank">
               <GithubButton>
                 <StyledGithubSvg />
               </GithubButton>

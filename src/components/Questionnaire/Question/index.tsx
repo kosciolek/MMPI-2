@@ -24,11 +24,7 @@ export const Question = () => {
     );
   };
 
-  if (
-    Number.isNaN(questionInt) ||
-    questionInt > questionCount ||
-    questionInt < 0
-  )
+  if (Number.isNaN(questionInt) || questionInt > questionCount || questionInt < 0)
     return <Redirect to="/questionnaire/1" />;
 
   return (
@@ -39,16 +35,10 @@ export const Question = () => {
         </Counter>
         <QuestionText>Zazwyczaj budzę się pełen energii</QuestionText>
         <Answers>
-          <Link
-            to={`/questionnaire/${nextQuestion}`}
-            onClick={() => onAnswerClick(true)}
-          >
+          <Link to={`/questionnaire/${nextQuestion}`} onClick={() => onAnswerClick(true)}>
             <Answer>TAK</Answer>
           </Link>
-          <Link
-            to={`/questionnaire/${nextQuestion}`}
-            onClick={() => onAnswerClick(false)}
-          >
+          <Link to={`/questionnaire/${nextQuestion}`} onClick={() => onAnswerClick(false)}>
             <Answer>Nie</Answer>
           </Link>
         </Answers>

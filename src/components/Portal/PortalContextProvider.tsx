@@ -10,16 +10,10 @@ export const PortalContext = createContext({
   emitter: null as null | Emitter<PortalEvents>,
 });
 
-export const PortalContextProvider = ({
-  children,
-}: {
-  children: ReactNode;
-}) => {
+export const PortalContextProvider = ({ children }: { children: ReactNode }) => {
   const [value] = useState(() => ({
     childrenRef: { current: {} },
     emitter: mitt<PortalEvents>(),
   }));
-  return (
-    <PortalContext.Provider value={value}>{children}</PortalContext.Provider>
-  );
+  return <PortalContext.Provider value={value}>{children}</PortalContext.Provider>;
 };

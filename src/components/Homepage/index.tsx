@@ -18,16 +18,14 @@ export const Homepage = () => {
             <WritingsWrapper>
               <Title>{t("MMPI - 2")}</Title>
               <Bar />
-              <Subtitle>
-                {t("Minnesota Multiphasic Personality Inventory - 2")}
-              </Subtitle>
+              <Subtitle>{t("Minnesota Multiphasic Personality Inventory - 2")}</Subtitle>
               <Buttons>
                 <Link to="/questionnaire/">
                   <Button tabIndex={-1} size="big" variant="filled">
                     {t("Questionnaire")}
                   </Button>
                 </Link>
-                <Link to="/calculator/">
+                <Link to="/calculator/answers">
                   <Button tabIndex={-1} size="big" variant="outlined">
                     {t("Calculator")}
                   </Button>

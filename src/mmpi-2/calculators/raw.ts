@@ -3,11 +3,7 @@ import { Answers, Gender } from "../types";
 import { calculateTrin } from "./trin";
 import { calculateVrin } from "./vrin";
 
-export const calculateRawScale = (
-  answers: Answers,
-  scaleId: keyof MainScales,
-  gender: Gender
-) => {
+export const calculateRawScale = (answers: Answers, scaleId: keyof MainScales, gender: Gender) => {
   if (scaleId === "VRIN") return calculateVrin(answers);
   if (scaleId === "TRIN") return calculateTrin(answers);
 

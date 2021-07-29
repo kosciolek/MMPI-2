@@ -3,10 +3,12 @@ import { useLatest } from "./useLatest";
 
 export const useClickOutside = (
   ignoredRefs: RefObject<HTMLElement>[],
-  callback: (e: MouseEvent) => void
+  callback: (e: MouseEvent) => void,
+  enabled = true
 ) => {
   const ignoredRefsRef = useLatest(ignoredRefs);
   useEffect(() => {
+    if (!enabled) return () => {};
     const listener = (e: MouseEvent) => {
       if (
         !ignoredRefsRef.current.some((ignored) =>
@@ -16,7 +18,7 @@ export const useClickOutside = (
         callback(e);
       }
     };
-    window.addEventListener("click", listener);
-    return () => window.removeEventListener("click", listener);
-  }, [callback]);
+    document.addEventListener("click", listener, { capture: true });
+    return () => document.removeEventListener("click", listener, { capture: true });
+  }, [callback, enabled]);
 };

@@ -24,9 +24,7 @@ export const useQuery = (width: number, type: "min" | "max") => {
   const [matches, setMatches] = useState(true);
 
   useLayoutEffect(() => {
-    const mediaQuery = window.matchMedia(
-      `screen and (${type}-width: ${width}px)`
-    );
+    const mediaQuery = window.matchMedia(`screen and (${type}-width: ${width}px)`);
     setMatches(mediaQuery.matches);
     const listener = (ev: any) => setMatches(ev.matches);
     mediaQuery.addEventListener("change", listener);
@@ -44,12 +42,8 @@ const makeQueryObject = <T extends "max" | "min">(type: T) =>
     return acc;
   }, {} as any) as QueryObject<T>;
 
-export type Query = (<T extends number>(
-  minWidth: T
-) => `@media screen and (min-width: ${T}px)`) & {
-  down: (<T extends number>(
-    maxWidth: T
-  ) => `@media screen and (max-width: ${T}px)`) &
+export type Query = (<T extends number>(minWidth: T) => `@media screen and (min-width: ${T}px)`) & {
+  down: (<T extends number>(maxWidth: T) => `@media screen and (max-width: ${T}px)`) &
     QueryObject<"max">;
 } & QueryObject<"min">;
 

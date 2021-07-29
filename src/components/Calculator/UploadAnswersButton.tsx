@@ -54,12 +54,7 @@ export const UploadAnswersButton = () => {
 
   return (
     <>
-      <Button
-        noPadding
-        left={<UploadIcon />}
-        color="neutral600"
-        onClick={triggerUpload}
-      >
+      <Button noPadding left={<UploadIcon />} color="neutral600" onClick={triggerUpload}>
         <span>
           <Trans t={t}>
             <Txt color="primary">Upload</Txt> answers

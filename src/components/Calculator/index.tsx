@@ -1,17 +1,18 @@
 import styled from "@emotion/styled";
 import { Trans, useTranslation } from "react-i18next";
-import {Redirect, useRouteMatch } from "react-router-dom";
-import { useNotification } from "../../hooks/notifications";
+import { Redirect } from "react-router-dom";
 import { useAppSelector } from "../../redux/hooks";
-import {getAnswersReady, getFinalScaleValues} from "../../redux/mmpi/selectors";
+import { getAnswersReady, getFinalScaleValues } from "../../redux/mmpi/selectors";
 import { Button } from "../Button";
 import { Grid } from "../Grid";
 import { Link } from "../Link";
 import { Sidebar } from "../Sidebar";
 import { Txt } from "../Txt";
 import { DownloadAnswersButton } from "./DownloadAnswersButton";
+import { GenderSelect } from "./GenderSelect";
 import { UploadAnswersButton } from "./UploadAnswersButton";
 import { ReactComponent as EditAnswersIcon } from "./manual-questions.svg";
+import { ViewModeSelect } from "./ViewModeSelect";
 
 export const Calculator = () => {
   const { t } = useTranslation();
@@ -39,6 +40,8 @@ export const Calculator = () => {
           </Link>
           <DownloadAnswersButton />
           <UploadAnswersButton />
+          <ViewModeSelect />
+          <GenderSelect />
         </Sidebar>
       </Grid>
     </RootGrid>

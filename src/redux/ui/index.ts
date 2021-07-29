@@ -23,16 +23,16 @@ export const uiSlice = createSlice({
     },
     nextPage: (state) => {
       const { page, answersPerPage } = state.answerView;
-      state.answerView.page = Math.min(
-        Math.floor(questionCount / answersPerPage),
-        page + 1
-      );
+      state.answerView.page = Math.min(Math.floor(questionCount / answersPerPage), page + 1);
     },
     prevPage: (state) => {
       state.answerView.page = Math.max(0, state.answerView.page - 1);
     },
     toggleAnswerCompactView: (state) => {
       state.answerView.compactView = !state.answerView.compactView;
+    },
+    setAnswersPerPage: (state, { payload }: PayloadAction<number>) => {
+      state.answerView.answersPerPage = payload;
     },
   },
   initialState,
