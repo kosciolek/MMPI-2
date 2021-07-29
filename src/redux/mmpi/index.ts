@@ -27,5 +27,8 @@ export const mmpiSlice = createSlice({
     toggleQuestion: (state, action: PayloadAction<number>) => {
       state.answers[action.payload] = !state.answers[action.payload];
     },
+    resetAnswers: (state) => {
+      state.answers = Array.from({ length: questionCount }).fill(null) as null[];
+    },
   },
 });

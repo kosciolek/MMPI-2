@@ -1,14 +1,16 @@
 import styled from "@emotion/styled";
+import { useTranslation } from "react-i18next";
 import { useDispatch } from "react-redux";
 import { useParams, useRouteMatch, Redirect } from "react-router-dom";
-import { questionCount } from "../../../mmpi-2/utils";
-import { mmpiSlice } from "../../../redux/mmpi";
-import { Button } from "../../Button";
-import { contentWidth } from "../../Layout/utils";
-import { Link } from "../../Link";
+import { questionCount } from "../../mmpi-2/utils";
+import { mmpiSlice } from "../../redux/mmpi";
+import { Button } from "../Button";
+import { contentWidth } from "../Layout/utils";
+import { Link } from "../Link";
 
 /* Todo make links relative */
 export const Question = () => {
+  const { t } = useTranslation("questions");
   const { questionId } = useParams<{ questionId: string }>();
   const { path } = useRouteMatch();
   const questionInt = parseInt(questionId, 10);
@@ -33,7 +35,7 @@ export const Question = () => {
         <Counter>
           {questionId} / {questionCount}
         </Counter>
-        <QuestionText>Zazwyczaj budzę się pełen energii</QuestionText>
+        <QuestionText>{t(questionId)}</QuestionText>
         <Answers>
           <Link to={`/questionnaire/${nextQuestion}`} onClick={() => onAnswerClick(true)}>
             <Answer>TAK</Answer>

@@ -18,5 +18,6 @@ export const Root = styled.div`
   background-color: ${(p) => p.theme.colors.errorLight};
   padding: 16px;
   text-align: center;
-  color: ${p => p.theme.colors.neutral900};
+  color: ${(p) => p.theme.colors.neutral900};
+  margin-bottom: 16px;
 `;

@@ -18,6 +18,9 @@ export const uiSlice = createSlice({
     setMobileMenuOpen: (state, { payload }: PayloadAction<boolean>) => {
       state.mobileMenuOpen = payload;
     },
+    toggleMobileMenu: (state) => {
+      state.mobileMenuOpen = !state.mobileMenuOpen;
+    },
     setAnswersPage: (state, action: PayloadAction<number>) => {
       state.answerView.page = action.payload;
     },

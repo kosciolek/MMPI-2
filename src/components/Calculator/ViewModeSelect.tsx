@@ -14,10 +14,10 @@ export const ViewModeSelect = () => {
   const mode = useAppSelector(getViewMode);
 
   return (
-    <Select label="View mode" value={mode} onChange={(val) => changeMode(val)}>
-      <Option value="k">{t("K-corrected")}</Option>
-      <Option value="raw">{t("Raw")}</Option>
-      <Option value="ten">{t("Ten")}</Option>
+    <Select label={t('View mode')} value={mode} onChange={(val) => changeMode(val)}>
+      <Option value="k">{t("K-corrected scales")}</Option>
+      <Option value="raw">{t("Raw scales")}</Option>
+      <Option value="ten">{t("Ten scales")}</Option>
     </Select>
   );
 };

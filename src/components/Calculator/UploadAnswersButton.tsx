@@ -22,7 +22,7 @@ export const UploadAnswersButton = () => {
           title: t("Upload error"),
           content: (
             <>
-              <div>{t("Invalid answers file.")}</div>
+              <div>{t("Invalid answers file")}</div>
               <Txt color="neutral">{filename}</Txt>
             </>
           ),

@@ -1,7 +1,6 @@
 import { Helmet } from "react-helmet";
 import { useTranslation } from "react-i18next";
 import { Redirect, Route, Switch, useLocation } from "react-router-dom";
-import { Box } from "./components/Box";
 import { CalculatorRouting } from "./components/Calculator/routing";
 import { Contact } from "./components/Contact";
 import { Homepage } from "./components/Homepage";
@@ -10,8 +9,9 @@ import { Questionnaire } from "./components/Questionnaire";
 import { GlobalStyles } from "./GlobalStyles";
 
 function App() {
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
   const { pathname } = useLocation();
+
   return (
     <>
       <Helmet>

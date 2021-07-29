@@ -11,7 +11,7 @@ const flags = {
 
 export const LanguageMenu = () => {
   const { t, i18n } = useTranslation();
-  const FlagComponent = flags[i18n.language as keyof typeof flags] ?? flags.pl;
+  const FlagComponent = i18n.language.toLowerCase().includes("en") ? flags.en : flags.pl;
 
   const onClick = () => {
     /* Todo - handle more languages */

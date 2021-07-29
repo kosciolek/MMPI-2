@@ -20,8 +20,8 @@ export const Answers = memo(() => {
 
   return (
     <Root>
+      <PolishWarning />
       <Grid container>
-        <PolishWarning />
         {Array.from({ length: count }).map((_, i) => (
           <StyledGrid
             /* eslint-disable-next-line react/no-array-index-key */

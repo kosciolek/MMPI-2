@@ -2,7 +2,9 @@ import styled from "@emotion/styled";
 import { forwardRef } from "react";
 import { animated } from "react-spring";
 import { iif } from "../../utils/css";
+import { Button } from "../Button";
 import { NotificationWithId } from "./types";
+import { ReactComponent as CancelIcon } from "./cancel.svg";
 
 export type NotificationProps = NotificationWithId & {
   onCancel: () => void;
@@ -15,7 +17,9 @@ export const Notification = forwardRef<HTMLDivElement, NotificationProps>(
       <Content>
         <Head>
           <Title type={type}>{title}</Title>
-          <span onClick={onCancel}>x</span>
+          <Button noPadding onClick={onCancel}>
+            <StyledCancelIcon />
+          </Button>
         </Head>
         {content}
       </Content>
@@ -44,6 +48,8 @@ export const Bar = styled.div<{ type: NotificationProps["type"] }>`
 `;
 export const Head = styled.div`
   display: flex;
+  justify-content: space-between;
+  align-content: center;
 `;
 export const Title = styled.div<{ type: NotificationProps["type"] }>`
   flex-grow: 1;
@@ -60,4 +66,10 @@ export const Content = styled.div`
   flex-grow: 1;
   font-weight: 500;
   font-size: 16px;
+`;
+export const StyledCancelIcon = styled(CancelIcon)`
+  fill: ${(p) => p.theme.colors.primary};
+  width: 24px;
+  height: 24px;
+  cursor: pointer;
 `;

@@ -12,5 +12,5 @@ export const i18n = i18next
     interpolation: {
       escapeValue: false,
     },
-    fallbackLng: LANGUAGE.PL,
+    fallbackLng: LANGUAGE.EN,
   });

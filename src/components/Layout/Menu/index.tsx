@@ -1,5 +1,11 @@
 import styled from "@emotion/styled";
+import { useRef } from "react";
 import { useTranslation } from "react-i18next";
+import { media } from "../../../hooks/media";
+import { useClickOutside } from "../../../hooks/useClickOutside";
+import { $callback } from "../../../hooks/utils";
+import { useAppDispatch, useAppSelector } from "../../../redux/hooks";
+import { uiSlice } from "../../../redux/ui";
 import { Button } from "../../Button";
 import { Grid } from "../../Grid";
 import { Link } from "../../Link";
@@ -11,6 +17,7 @@ import { MobileMenu } from "./MobileMenu";
 
 export const Menu = () => {
   const { t } = useTranslation();
+
   return (
     <Root>
       <Grid container area="main">

@@ -39,6 +39,8 @@ export const WaveContainer = styled.div`
 export const StyledWaveSvg = styled(WaveSvg)`
   display: block;
   min-width: 100%;
+  margin-bottom: -1px;
+  margin-left: -3px;
 `;
 
 export const Space = styled.div`
