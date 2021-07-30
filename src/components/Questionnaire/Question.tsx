@@ -84,4 +84,5 @@ export const Answer = styled(Button)`
   font-size: 40px;
   font-weight: normal;
   text-transform: uppercase;
+  user-select: none;
 `;
