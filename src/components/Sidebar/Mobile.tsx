@@ -4,6 +4,7 @@ import styled from "@emotion/styled";
 import { media } from "../../hooks/media";
 import { useBodyLock } from "../../hooks/useBodyLock";
 import { useClickOutside } from "../../hooks/useClickOutside";
+import { $callback } from "../../hooks/utils";
 import { useAppDispatch, useAppSelector } from "../../redux/hooks";
 import { uiSlice } from "../../redux/ui";
 import { LanguageMenu } from "../Layout/Menu/LanguageMenu";
@@ -28,14 +29,13 @@ export const Mobile = ({ children }: { children?: ReactNode }) => {
   });
 
   const rootRef = useRef<HTMLDivElement | null>(null);
-  useEffect(() => {
-    const listener = () => {
-      console.log("listener", mobileOpen);
+  useClickOutside(
+    [rootRef],
+    $callback(() => {
+      console.log('listener', mobileOpen);
       if (mobileOpen) dispatch(uiSlice.actions.setMobileMenuOpen(false));
-    };
-    window.addEventListener("click", listener);
-    return () => window.removeEventListener("click", listener);
-  }, [mobileOpen]);
+    }, [mobileOpen])
+  );
 
   useBodyLock(mobileOpen);
 

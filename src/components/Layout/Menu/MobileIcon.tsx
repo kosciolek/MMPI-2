@@ -9,6 +9,7 @@ import { ReactComponent as MenuSvg } from "./menu-mobile.svg";
 export const MobileIcon = forwardRef<HTMLButtonElement, {}>((_, ref) => {
   const open = useAppSelector((state) => state.ui.mobileMenuOpen);
   const dispatch = useAppDispatch();
+  console.log('rerender')
   const onClick = () => {
     console.log("icon", open);
     return dispatch(uiSlice.actions.toggleMobileMenu());

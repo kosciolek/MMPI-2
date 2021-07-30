@@ -15,6 +15,9 @@ export const useClickOutside = (
         }
       },
       [callback, ignoredRefs]
-    )
+    ),
+    {
+      capture: true,
+    }
   );
 };
