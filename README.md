@@ -1,13 +1,3 @@
-- [Minnesota Multiphasic Personality Inventory (Minnesocki Wielowymiarowy Inwentarz Osobowości)](#minnesota-multiphasic-personality-inventory-minnesocki-wielowymiarowy-inwentarz-osobowości)
-  - [Scales](#scales)
-      - [VRIN & TRIN](#vrin--trin)
-      - [Control scales](#control-scales)
-      - [Restructured clinical scales](#restructured-clinical-scales)
-      - [Clinical scales](#clinical-scales)
-      - [Content component scales](#content-component-scales)
-      - [Harris-Lingoes scales](#harris-lingoes-scales)
-      - [Si Subscales](#si-subscales)
-  - [Localization](#localization)
 # Minnesota Multiphasic Personality Inventory (Minnesocki Wielowymiarowy Inwentarz Osobowości)
 
 A Minnesota Multiphasic Personality Inventory 2 automated questionnaire and calculator.
