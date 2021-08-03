@@ -77,8 +77,8 @@ export const AnswersSidebar = () => {
           )}
           content={({ close }) => (
             <div>
-              <DialogTitle>{t('Clear answers')}</DialogTitle>
-              <DialogContent>{t('Are you sure you want to reset all answers?')}</DialogContent>
+              <DialogTitle>{t("Clear answers")}</DialogTitle>
+              <DialogContent>{t("Are you sure you want to reset all answers?")}</DialogContent>
               <DialogActions>
                 <Button
                   onClick={() => {
@@ -90,9 +90,9 @@ export const AnswersSidebar = () => {
                   }}
                   variant="filled"
                 >
-                  {t('Yes')}
+                  {t("Yes")}
                 </Button>
-                <Button onClick={close}>{t('No')}</Button>
+                <Button onClick={close}>{t("No")}</Button>
               </DialogActions>
             </div>
           )}

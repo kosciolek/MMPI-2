@@ -9,7 +9,9 @@ export const HelmetTitle = ({ title }: HelmetTitleProps) => {
   const { t } = useTranslation();
   return (
     <Helmet>
-      <title>{t('MMPI - 2')}{" "}- {title}</title>
+      <title>
+        {t("MMPI - 2")} - {title}
+      </title>
     </Helmet>
   );
 };

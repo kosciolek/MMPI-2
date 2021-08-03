@@ -29,7 +29,7 @@ export const Root = styled.div`
   & + & {
     border-top: 1px solid ${(p) => p.theme.colors.primary100}50;
   }
-  
+
   &:nth-of-type(even) {
     background-color: ${(p) => p.theme.colors.primary50}60;
   }
@@ -41,8 +41,6 @@ export const GroupName = styled.div`
   font-size: 28px;
   margin-bottom: 16px;
   padding: 16px 0;
-  
-  
 `;
 export const Counters = styled.div`
   display: grid;
