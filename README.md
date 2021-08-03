@@ -7,14 +7,13 @@ Though it's primarily meant to be [filled out by a psychologist](https://mmpi.ko
 ## Scales
 
 All scales are available in three viewing modes:
-* **Raw** scales
-* **Ten** scales
-* **K-corrected** scales
+* **Raw** results
+* **T-corrected** results
+* **K-corrected** results
 
 Both male and female calculations are available.
 
 The calculator supports all MMPI-2 standard scales:
-
 
 #### VRIN & TRIN
 
