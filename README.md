@@ -8,8 +8,8 @@ Though it's primarily meant to be [filled out by a psychologist](https://mmpi.ko
 
 All scales are available in three viewing modes:
 * **Raw** results
-* **T-corrected** results
-* **K-corrected** results
+* **T-scores**
+* **K-corrected**
 
 Both male and female calculations are available.
 
