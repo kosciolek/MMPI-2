@@ -35,6 +35,7 @@ export const uiSlice = createSlice({
       state.answerView.compactView = !state.answerView.compactView;
     },
     setAnswersPerPage: (state, { payload }: PayloadAction<number>) => {
+      state.answerView.page = state.answerView.page * (state.answerView.answersPerPage / payload);
       state.answerView.answersPerPage = payload;
     },
   },
