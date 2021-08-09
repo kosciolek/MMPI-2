@@ -15,8 +15,8 @@ export const PreviousWarning = () => {
 
   const onClick = () => {
     makeNotification({
-      title: "Answers cleared",
-      content: "The questionnaire has been emptied."
+      title: t("Answers cleared"),
+      content: t("The questionnaire has been emptied"),
     });
     dispatch(mmpiSlice.actions.resetAnswers());
   };
