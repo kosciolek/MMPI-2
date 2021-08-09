@@ -3745,6 +3745,8 @@ __metadata:
     react-router-dom: ^5.2.0
     react-scripts: 4.0.3
     react-spring: ^9.2.4
+    redux: ^4.1.1
+    redux-persist: ^6.0.0
     typescript: ^4.1.2
     web-vitals: ^1.0.1
   languageName: unknown
@@ -16519,6 +16521,15 @@ fsevents@^1.2.7:
   languageName: node
   linkType: hard
 
+"redux-persist@npm:^6.0.0":
+  version: 6.0.0
+  resolution: "redux-persist@npm:6.0.0"
+  peerDependencies:
+    redux: ">4.0.0"
+  checksum: 6b7c74526155c53ecdd49ec51d27fa07d265454440c734e8f1ef71dcbb78ae864a9965e152b9b1f35950ad933b66a79b8cf6be555f2dc89e1a61f01fc70a2965
+  languageName: node
+  linkType: hard
+
 "redux-thunk@npm:^2.3.0":
   version: 2.3.0
   resolution: "redux-thunk@npm:2.3.0"
@@ -16532,6 +16543,15 @@ fsevents@^1.2.7:
   dependencies:
     "@babel/runtime": ^7.9.2
   checksum: d939d0df1e12982c66c0ea767c8ec98276ee981ce0381222239b7f823c6ad02ea3e3c622859bcb4934446b3f86d735db35d7bd8b1697d359070e5fbef1f4ad49
+  languageName: node
+  linkType: hard
+
+"redux@npm:^4.1.1":
+  version: 4.1.1
+  resolution: "redux@npm:4.1.1"
+  dependencies:
+    "@babel/runtime": ^7.9.2
+  checksum: 063e1d52588d62d438bb392975e57c0091c79f9abdbb8594c44c1680a73415280f6133c3d9cb3b116fe1ceb7e1aefb44775d6136b8bb6b9eb6a2c1a23e32a840
   languageName: node
   linkType: hard
 
