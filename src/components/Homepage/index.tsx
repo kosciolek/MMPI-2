@@ -1,15 +1,19 @@
 import styled from "@emotion/styled/macro";
 import { useTranslation } from "react-i18next";
 import { Link } from "react-router-dom";
+import { useAppSelector } from "../../redux/hooks";
+import { getIsFinished } from "../../redux/mmpi/selectors";
 import { Button } from "../Button";
 import { Grid } from "../Grid";
 import { Layout } from "../Layout";
 import { contentWidth } from "../Layout/utils";
 import { Sidebar } from "../Sidebar";
 import { ReactComponent as TestSvg } from "./homepage-test-icon.svg";
+import { PreviousWarning } from "./PreviousWarning";
 
 export const Homepage = () => {
   const { t } = useTranslation();
+
   return (
     <Layout>
       <Root container>
@@ -31,6 +35,7 @@ export const Homepage = () => {
                   </Button>
                 </Link>
               </Buttons>
+              <PreviousWarning />
             </WritingsWrapper>
             <StyledTestSvg />
           </Content>
@@ -81,7 +86,6 @@ export const Title = styled.h1`
   white-space: nowrap;
   line-height: 1;
 `;
-
 export const Bar = styled.div`
   height: 16px;
   width: 18%;

@@ -1,14 +1,16 @@
 import React, { ReactNode, useEffect, useRef } from "react";
 import { animated, useTransition } from "react-spring";
 import styled from "@emotion/styled";
+import { ContactLink } from "../../ContactLink";
 import { media } from "../../hooks/media";
 import { useBodyLock } from "../../hooks/useBodyLock";
 import { useClickOutside } from "../../hooks/useClickOutside";
 import { $callback } from "../../hooks/utils";
 import { useAppDispatch, useAppSelector } from "../../redux/hooks";
 import { uiSlice } from "../../redux/ui";
-import { LanguageMenu } from "../Layout/Menu/LanguageMenu";
-import { MobileIcon } from "../Layout/Menu/MobileIcon";
+import { HomeButton } from "../Menu/HomeButton";
+import { LanguageMenu } from "../Menu/LanguageMenu";
+import { MobileIcon } from "../Menu/MobileIcon";
 import ReactDOM from "react-dom";
 
 export const Mobile = ({ children }: { children?: ReactNode }) => {
@@ -32,7 +34,6 @@ export const Mobile = ({ children }: { children?: ReactNode }) => {
   useClickOutside(
     [rootRef],
     $callback(() => {
-      console.log('listener', mobileOpen);
       if (mobileOpen) dispatch(uiSlice.actions.setMobileMenuOpen(false));
     }, [mobileOpen])
   );
@@ -50,9 +51,10 @@ export const Mobile = ({ children }: { children?: ReactNode }) => {
                 <MobileIcon />
               </IconContainer>
               <Items>{children}</Items>
-              <LanguageMenuWrapper>
+              <Bottom>
+                <ContactLink />
                 <LanguageMenu />
-              </LanguageMenuWrapper>
+              </Bottom>
             </Root>,
             document.body
           )
@@ -90,8 +92,8 @@ export const Items = styled.div`
     margin-top: 16px;
   }
 `;
-export const LanguageMenuWrapper = styled.div`
-  justify-content: flex-end;
+export const Bottom = styled.div`
+  justify-content: space-between;
   margin-top: auto;
   display: flex;
   padding: 16px;

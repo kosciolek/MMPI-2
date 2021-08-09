@@ -1,6 +1,6 @@
 import styled from "@emotion/styled";
 import { FC } from "react";
-import { Menu } from "./Menu";
+import { Menu } from "../Menu";
 import { Wave } from "./Wave";
 
 export const Layout: FC = ({ children }) => (

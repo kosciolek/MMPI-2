@@ -1,16 +1,12 @@
 import styled from "@emotion/styled";
-import { useRef } from "react";
 import { useTranslation } from "react-i18next";
-import { media } from "../../../hooks/media";
-import { useClickOutside } from "../../../hooks/useClickOutside";
-import { $callback } from "../../../hooks/utils";
-import { useAppDispatch, useAppSelector } from "../../../redux/hooks";
-import { uiSlice } from "../../../redux/ui";
-import { Button } from "../../Button";
-import { Grid } from "../../Grid";
-import { Link } from "../../Link";
-import { contentWidth, isDesktopLayout } from "../utils";
+import { ContactLink } from "../../ContactLink";
+import { Button } from "../Button";
+import { Grid } from "../Grid";
+import { Link } from "../Link";
+import { contentWidth, isDesktopLayout } from "../Layout/utils";
 import { ReactComponent as GithubSvg } from "./github.svg";
+import { HomeButton } from "./HomeButton";
 import { LanguageMenu } from "./LanguageMenu";
 import { MobileIcon } from "./MobileIcon";
 
@@ -24,12 +20,11 @@ export const Menu = () => {
         <Grid item xs={12} lg={9}>
           <Left>
             <MobileIcon />
+
             <LanguageMenuWrapper>
               <LanguageMenu />
             </LanguageMenuWrapper>
-            <Link transparent to="/contact">
-              <Contact>{t("contact")}</Contact>
-            </Link>
+            <HomeButton />
           </Left>
         </Grid>
         <Grid item lg={3} xs={0}>
@@ -39,6 +34,7 @@ export const Menu = () => {
                 <StyledGithubSvg />
               </GithubButton>
             </Link>
+            <ContactLink />
           </Right>
         </Grid>
       </Grid>
@@ -67,6 +63,10 @@ export const Right = styled.div`
   height: 100%;
   flex-grow: 1;
   border-left: 1px solid ${(p) => p.theme.colors.primary100};
+
+  & > * + * {
+    margin-left: 16px;
+  }
 `;
 export const GithubButton = styled(Button)`
   padding: 0;

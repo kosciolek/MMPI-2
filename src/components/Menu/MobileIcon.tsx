@@ -1,19 +1,15 @@
 import styled from "@emotion/styled";
 import React, { forwardRef } from "react";
 import { useSpring, animated } from "react-spring";
-import { useAppDispatch, useAppSelector } from "../../../redux/hooks";
-import { uiSlice } from "../../../redux/ui";
-import { isDesktopLayout } from "../utils";
+import { useAppDispatch, useAppSelector } from "../../redux/hooks";
+import { uiSlice } from "../../redux/ui";
+import { isDesktopLayout } from "../Layout/utils";
 import { ReactComponent as MenuSvg } from "./menu-mobile.svg";
 
 export const MobileIcon = forwardRef<HTMLButtonElement, {}>((_, ref) => {
   const open = useAppSelector((state) => state.ui.mobileMenuOpen);
   const dispatch = useAppDispatch();
-  console.log("rerender");
-  const onClick = () => {
-    console.log("icon", open);
-    return dispatch(uiSlice.actions.toggleMobileMenu());
-  };
+  const onClick = () => dispatch(uiSlice.actions.toggleMobileMenu());
 
   const spring = useSpring({
     ...(open ? { rotate: 180 } : { rotate: 90 }),
