@@ -41,8 +41,10 @@
   "Minnesota Multiphasic Personality Inventory - 2": "Minnesocki Wielowymiarowy Inwentarz Osobowości - 2",
   "Questionnaire": "Kwestionariusz",
   "Calculator": "Kalkulator",
-  "contact": "Kontakt",
+  "The previous test has been remembered": "Poprzedni test został zapamiętany.",
+  "Click here to start fresh": "Kliknij tutaj, by usunąć poprzednie wyniki.",
   "Language": "Język",
   "Questionnaire completed": "Kwestionariusz został ukończony",
-  "View results": "Zobacz wyniki"
+  "View results": "Zobacz wyniki",
+  "contact": "Kontakt"
 }

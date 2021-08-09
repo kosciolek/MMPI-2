@@ -40,8 +40,10 @@
   "Minnesota Multiphasic Personality Inventory - 2": "Minnesota Multiphasic Personality Inventory - 2",
   "Questionnaire": "Questionnaire",
   "Calculator": "Calculator",
-  "contact": "Contact",
+  "The previous test has been remembered": "The previous test has been remembered",
+  "Click here to start fresh": "Click here to start fresh",
   "Language": "Language",
   "Questionnaire completed": "Questionnaire completed",
-  "View results": "View results"
+  "View results": "View results",
+  "contact": "Contact"
 }

@@ -16,6 +16,7 @@ export const PreviousWarning = () => {
   const onClick = () => {
     makeNotification({
       title: "Answers cleared",
+      content: "The questionnaire has been emptied."
     });
     dispatch(mmpiSlice.actions.resetAnswers());
   };
@@ -23,9 +24,9 @@ export const PreviousWarning = () => {
   if (isEmpty) return null;
   return (
     <Root>
-      {t("The previous test has been remembered.")}
+      {t("The previous test has been remembered")}
       <PreviousWarningButton noPadding onClick={onClick}>
-        {t("Click here to start fresh.")}
+        {t("Click here to start fresh")}
       </PreviousWarningButton>
     </Root>
   );

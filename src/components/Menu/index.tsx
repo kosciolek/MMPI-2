@@ -20,11 +20,10 @@ export const Menu = () => {
         <Grid item xs={12} lg={9}>
           <Left>
             <MobileIcon />
-
+            <HomeButton />
             <LanguageMenuWrapper>
               <LanguageMenu />
             </LanguageMenuWrapper>
-            <HomeButton />
           </Left>
         </Grid>
         <Grid item lg={3} xs={0}>

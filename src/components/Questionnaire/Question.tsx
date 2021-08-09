@@ -2,6 +2,7 @@ import styled from "@emotion/styled";
 import { useTranslation } from "react-i18next";
 import { useDispatch } from "react-redux";
 import { useParams, useRouteMatch, Redirect } from "react-router-dom";
+import { media } from "../../hooks/media";
 import { questionCount } from "../../mmpi-2/utils";
 import { mmpiSlice } from "../../redux/mmpi";
 import { Button } from "../Button";
@@ -17,14 +18,13 @@ export const Question = () => {
   const nextQuestion = questionInt + 1;
 
   const dispatch = useDispatch();
-  const onAnswerClick = (answer: boolean) => {
+  const onAnswerClick = (answer: boolean) =>
     dispatch(
       mmpiSlice.actions.answerSelected({
         questionId: questionInt - 1,
         answer,
       })
     );
-  };
 
   if (Number.isNaN(questionInt) || questionInt > questionCount || questionInt < 0)
     return <Redirect to="/questionnaire/1" />;
@@ -67,10 +67,15 @@ export const Counter = styled.div`
 export const QuestionText = styled.div`
   margin-top: 8px;
   color: ${(p) => p.theme.colors.primary};
-  font-size: 44px;
   font-weight: bold;
   text-shadow: 0 2px 4px rgba(0, 0, 0, 0.18);
   text-align: center;
+
+  padding: 0 24px;
+  font-size: 32px;
+  ${media.md} {
+    font-size: 44px;
+  }
 `;
 export const Answers = styled.div`
   margin-top: 80px;
@@ -85,4 +90,9 @@ export const Answer = styled(Button)`
   font-weight: normal;
   text-transform: uppercase;
   user-select: none;
+
+  &:hover {
+    text-decoration: underline;
+    text-decoration-thickness: 2px;
+  }
 `;
