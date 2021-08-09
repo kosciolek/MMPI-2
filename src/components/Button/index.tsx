@@ -114,4 +114,5 @@ export const Right = styled.div`
 export const Label = styled.span`
   display: inline-flex;
   align-self: center;
+  text-align: left;
 `;

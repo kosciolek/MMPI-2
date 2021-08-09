@@ -28,8 +28,6 @@ export const Question = ({ id }: QuestionProps) => {
       })
     );
 
-  if (Number.isNaN(id) || id > questionCount || id < 0) return <Redirect to="/questionnaire/1" />;
-
   return (
     <Root>
       <Contents>

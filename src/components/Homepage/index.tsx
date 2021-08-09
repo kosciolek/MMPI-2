@@ -9,6 +9,7 @@ import { Layout } from "../Layout";
 import { contentWidth } from "../Layout/utils";
 import { Sidebar } from "../Sidebar";
 import { ReactComponent as TestSvg } from "./homepage-test-icon.svg";
+import { LoadSample } from "./LoadSample";
 import { PreviousWarning } from "./PreviousWarning";
 
 export const Homepage = () => {
@@ -35,7 +36,10 @@ export const Homepage = () => {
                   </Button>
                 </Link>
               </Buttons>
-              <PreviousWarning />
+              <div>
+                <LoadSample />
+                <PreviousWarning />
+              </div>
             </WritingsWrapper>
             <StyledTestSvg />
           </Content>

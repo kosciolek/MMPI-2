@@ -1,43 +1,46 @@
 import styled from "@emotion/styled";
 import { useTranslation } from "react-i18next";
+import { useHistory } from "react-router-dom";
 import { useNotification } from "../../hooks/notifications";
-import { useAppDispatch, useAppSelector } from "../../redux/hooks";
+import { questionCount } from "../../mmpi-2/utils";
+import { useAppDispatch } from "../../redux/hooks";
 import { mmpiSlice } from "../../redux/mmpi";
-import { getIsEmpty } from "../../redux/mmpi/selectors";
 import { Button } from "../Button";
 import { Dialog, DialogActions, DialogContent, DialogTitle } from "../Dialog";
+import { PreviousWarningButton } from "./PreviousWarning";
 
-export const PreviousWarning = () => {
+export const LoadSample = () => {
   const { t } = useTranslation();
-  const isEmpty = useAppSelector(getIsEmpty);
   const dispatch = useAppDispatch();
 
   const makeNotification = useNotification();
+  const router = useHistory();
 
   const onClick = () => {
     makeNotification({
-      title: t("Answers cleared"),
-      content: t("The questionnaire has been emptied"),
+      title: t("Answers loaded"),
+      content: t("A random answer set has been generated"),
     });
-    dispatch(mmpiSlice.actions.resetAnswers());
+
+    const random = Array.from({ length: questionCount }).map(() => Math.random() > 0.5);
+    dispatch(mmpiSlice.actions.replaceAnswers(random));
+    router.push("/calculator/answers");
   };
 
-  if (isEmpty) return null;
   return (
     <Root>
-      {t("The previous test has been remembered")}
       <Dialog
         action={({ open }) => (
-          <PreviousWarningButton noPadding onClick={open}>
-            {t("Click here to start fresh")}
-          </PreviousWarningButton>
+          <LoadSampleButton noPadding onClick={open}>
+            {t("Click here to load a sample answer set")}
+          </LoadSampleButton>
         )}
         content={({ close }) => (
           <div>
-            <DialogTitle>{t("Clear answers")}</DialogTitle>
+            <DialogTitle>{t("Load random answers")}</DialogTitle>
             <DialogContent>
               {t(
-                "Are you sure you want to clear all answers?"
+                "Are you sure you want to load random answers? All previous answers will be cleared."
               )}
             </DialogContent>
             <DialogActions>
@@ -57,9 +60,8 @@ export const Root = styled.div`
   border-top: 1px solid ${(p) => p.theme.colors.primary100};
   padding-top: 16px;
   font-size: 16px;
-  margin-top: 16px;
 `;
-export const PreviousWarningButton = styled(Button)`
+export const LoadSampleButton = styled(Button)`
   text-transform: none;
   display: block;
 `;
