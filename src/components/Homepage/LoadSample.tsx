@@ -40,7 +40,7 @@ export const LoadSample = () => {
             <DialogTitle>{t("Load random answers")}</DialogTitle>
             <DialogContent>
               {t(
-                "Are you sure you want to load random answers? All previous answers will be cleared."
+                "Are you sure you want to load random answers? All previous answers will be cleared"
               )}
             </DialogContent>
             <DialogActions>
