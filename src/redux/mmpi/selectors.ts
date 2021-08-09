@@ -27,3 +27,6 @@ export const getIsEmpty = createSelector(
   [getUnfinishedAnswersCount],
   (count) => count === questionCount
 );
+
+/* Return the index of the first question without an answer*/
+export const getFirstUnanswered = createSelector([getAnswers], (answers) => answers.indexOf(null));

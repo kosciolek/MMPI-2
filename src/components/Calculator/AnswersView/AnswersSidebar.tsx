@@ -18,6 +18,7 @@ import { UploadAnswersButton } from "../UploadAnswersButton";
 import { AnswersPerPageSelect } from "./AnswersPerPageSelect";
 import { ReactComponent as ResultsIcon } from "./back-to-results.svg";
 import { ReactComponent as ClearIcon } from "./clear-answers.svg";
+import { GoToUnanswered } from "./GoToUnanswered";
 
 export const AnswersSidebar = () => {
   const { t } = useTranslation();
@@ -41,6 +42,7 @@ export const AnswersSidebar = () => {
       </Link>
       <DownloadAnswersButton />
       <UploadAnswersButton />
+      <GoToUnanswered />
       {isLg && (
         <Button
           noPadding
