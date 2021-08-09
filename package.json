@@ -8,6 +8,7 @@
     "@emotion/styled": "^11.3.0",
     "@popperjs/core": "^2.9.2",
     "@reduxjs/toolkit": "^1.6.1",
+    "@types/react-router": "^5.1.16",
     "@types/react-router-dom": "^5.1.8",
     "i18next": "^20.3.4",
     "i18next-browser-languagedetector": "^6.1.2",

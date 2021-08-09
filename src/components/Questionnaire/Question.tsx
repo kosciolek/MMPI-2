@@ -9,33 +9,34 @@ import { Button } from "../Button";
 import { contentWidth } from "../Layout/utils";
 import { Link } from "../Link";
 
+export type QuestionProps = {
+  id: number;
+};
+
 /* Todo make links relative */
-export const Question = () => {
+export const Question = ({ id }: QuestionProps) => {
   const { t } = useTranslation("questions");
-  const { questionId } = useParams<{ questionId: string }>();
-  const { path } = useRouteMatch();
-  const questionInt = parseInt(questionId, 10);
-  const nextQuestion = questionInt + 1;
+
+  const nextQuestion = id + 2;
 
   const dispatch = useDispatch();
   const onAnswerClick = (answer: boolean) =>
     dispatch(
       mmpiSlice.actions.answerSelected({
-        questionId: questionInt - 1,
+        questionId: id - 1,
         answer,
       })
     );
 
-  if (Number.isNaN(questionInt) || questionInt > questionCount || questionInt < 0)
-    return <Redirect to="/questionnaire/1" />;
+  if (Number.isNaN(id) || id > questionCount || id < 0) return <Redirect to="/questionnaire/1" />;
 
   return (
     <Root>
       <Contents>
         <Counter>
-          {questionId} / {questionCount}
+          {id + 1} / {questionCount}
         </Counter>
-        <QuestionText>{t(questionId)}</QuestionText>
+        <QuestionText>{t((id + 1).toString())}</QuestionText>
         <Answers>
           <Link to={`/questionnaire/${nextQuestion}`} onClick={() => onAnswerClick(true)}>
             <Answer>TAK</Answer>
