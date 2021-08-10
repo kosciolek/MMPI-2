@@ -1,4 +1,5 @@
 import styled from "@emotion/styled";
+import { useTranslation } from "react-i18next";
 import { ScaleHierarchy, scaleHierarchy } from "../../../mmpi-2/scaleHierarchy";
 import { useAppSelector } from "../../../redux/hooks";
 import { getFinalScaleValues } from "../../../redux/mmpi/mmpi-selectors";
@@ -10,14 +11,15 @@ export type ScaleGroupProps = {
 
 export const Group = ({ groupName }: ScaleGroupProps) => {
   const results = useAppSelector(getFinalScaleValues);
-
+  const { t } = useTranslation("groups");
+  console.log(groupName);
   return (
     <Root>
-      <GroupName>{groupName}</GroupName>
+      <GroupName>{t(groupName)}</GroupName>
       <Counters>
         {scaleHierarchy[groupName].map((scaleName) => {
           const scaleValue = results[scaleName];
-          return <Counter name={scaleName} value={scaleValue} />;
+          return <Counter key={scaleName} name={scaleName} value={scaleValue} />;
         })}
       </Counters>
     </Root>
