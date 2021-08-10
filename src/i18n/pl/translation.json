@@ -41,6 +41,10 @@
   "K-corrected scales": "Skale K-poprawione",
   "Raw scales": "Skale surowe",
   "Ten scales": "Skale tenowe",
+  "contact": "Kontakt",
+  "written by": "Napisane przez <1>Juliusza Kościołek</1> dla Przychodni Psychiatrycznej \"Otmęt\" w Krapkowicach.",
+  "do not contact": "Prosimy nie kontaktować się z przychodnią w sprawach związanych z aplikacją.",
+  "reachable via": "Autor jest dostępny pod adresem <2><0>juliusz@kosciolek.dev</0></2>",
   "Minnesota Multiphasic Personality Inventory - 2": "Minnesocki Wielowymiarowy Inwentarz Osobowości - 2",
   "Questionnaire": "Kwestionariusz",
   "Calculator": "Kalkulator",
@@ -55,6 +59,5 @@
   "Are you sure you want to clear all answers?": "Czy jesteś pewien, że chcesz wyzerować wszystkie odpowiedzi?",
   "Language": "Język",
   "Questionnaire completed": "Kwestionariusz został ukończony",
-  "View results": "Zobacz wyniki",
-  "contact": "Kontakt"
+  "View results": "Zobacz wyniki"
 }

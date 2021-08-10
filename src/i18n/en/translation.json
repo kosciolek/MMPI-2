@@ -40,6 +40,10 @@
   "K-corrected scales": "K-corrected scales",
   "Raw scales": "Raw scales",
   "Ten scales": "Ten scales",
+  "contact": "Contact",
+  "written by": "Written by <1>Juliusz Kościołek</1> for Przychodnia Psychiatryczna \"Otmęt\" w Krapkowicach.",
+  "do not contact": "Please do not contact the clinic for any questionnaire related questions.",
+  "reachable via": "The author is reachable via <2><0>juliusz@kosciolek.dev</0></2>",
   "Minnesota Multiphasic Personality Inventory - 2": "Minnesota Multiphasic Personality Inventory - 2",
   "Questionnaire": "Questionnaire",
   "Calculator": "Calculator",
@@ -54,6 +58,5 @@
   "Are you sure you want to clear all answers?": "Are you sure you want to clear all answers?",
   "Language": "Language",
   "Questionnaire completed": "Questionnaire completed",
-  "View results": "View results",
-  "contact": "Contact"
+  "View results": "View results"
 }

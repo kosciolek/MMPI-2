@@ -1,12 +1,13 @@
 import styled from "@emotion/styled/macro";
 import { useTranslation } from "react-i18next";
 import { Link } from "react-router-dom";
+import { media } from "../../hooks/media";
 import { useAppSelector } from "../../redux/hooks";
 import { getIsFinished } from "../../redux/mmpi/selectors";
 import { Button } from "../Button";
 import { Grid } from "../Grid";
 import { Layout } from "../Layout";
-import { contentWidth } from "../Layout/utils";
+import { contentWidth, isDesktopLayout } from "../Layout/utils";
 import { Sidebar } from "../Sidebar";
 import { ReactComponent as TestSvg } from "./homepage-test-icon.svg";
 import { LoadSample } from "./LoadSample";
@@ -18,7 +19,7 @@ export const Homepage = () => {
   return (
     <Layout>
       <Root container>
-        <Grid item xs={12} md={9}>
+        <Grid item xs={12} lg={9}>
           <Content>
             <WritingsWrapper>
               <Title>{t("MMPI - 2")}</Title>
@@ -59,29 +60,33 @@ export const Root = styled(Grid)`
 `;
 export const Content = styled.div`
   display: flex;
-  grid-area: main;
-
   justify-content: center;
-  padding-top: 64px;
+  padding: 64px 32px 32px 32px;
 `;
 export const WritingsWrapper = styled.div`
   display: flex;
   flex-direction: column;
-  flex-basis: 50%;
+  flex-basis: 75%;
   margin-right: 48px;
 
   & > * + * {
     margin-top: 28px;
   }
+  
+  ${media.md} {
+    flex-basis: 50%;
+  }
 `;
 export const Buttons = styled.div`
   display: grid;
   grid-gap: 32px;
-  grid-auto-flow: column;
   justify-content: flex-start;
+
+  ${media.sm} {
+    grid-auto-flow: column;
+  }
 `;
 export const Title = styled.h1`
-  font-size: 100px;
   font-weight: bold;
   color: #3a83e2;
   background: -webkit-linear-gradient(180deg, #69bfe3, #194f94);
@@ -89,6 +94,12 @@ export const Title = styled.h1`
   -webkit-text-fill-color: transparent;
   white-space: nowrap;
   line-height: 1;
+
+  font-size: 64px;
+
+  ${media.md} {
+    font-size: 100px;
+  }
 `;
 export const Bar = styled.div`
   height: 16px;
@@ -101,4 +112,10 @@ export const Subtitle = styled.p`
   font-size: 26px;
   font-weight: bold;
 `;
-export const StyledTestSvg = styled(TestSvg)``;
+export const StyledTestSvg = styled(TestSvg)`
+  display: none;
+
+  ${media.md} {
+    display: block;
+  }
+`;
