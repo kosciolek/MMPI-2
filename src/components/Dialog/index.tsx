@@ -26,7 +26,7 @@ export const Dialog = ({ action, content }: DialogProps) => {
       close: () => setOpen(false),
       set: (state: boolean) => setOpen(state),
     }),
-    [open]
+    []
   );
 
   const transition = useTransition(open, {

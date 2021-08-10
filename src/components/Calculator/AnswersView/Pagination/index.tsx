@@ -1,6 +1,5 @@
 import styled from "@emotion/styled";
 import { Trans, useTranslation } from "react-i18next";
-import { media } from "../../../../hooks/media";
 import { questionCount } from "../../../../mmpi-2/utils";
 import { useAppDispatch, useAppSelector } from "../../../../redux/hooks";
 import { uiSlice } from "../../../../redux/ui";

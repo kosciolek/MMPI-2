@@ -1,5 +1,4 @@
 import { Redirect, Route, Switch, useRouteMatch } from "react-router-dom";
-import { useTransition } from "react-spring";
 import { questionCount } from "../../mmpi-2/utils";
 import { Layout } from "../Layout";
 import { Question } from "./Question";

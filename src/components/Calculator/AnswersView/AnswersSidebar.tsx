@@ -1,4 +1,3 @@
-import styled from "@emotion/styled";
 import { Trans, useTranslation } from "react-i18next";
 import { ReactComponent as CompactViewIcon } from "../../../assets/compact-view.svg";
 import { media } from "../../../hooks/media";

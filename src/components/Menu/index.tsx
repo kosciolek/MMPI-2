@@ -1,5 +1,4 @@
 import styled from "@emotion/styled";
-import { useTranslation } from "react-i18next";
 import { ContactLink } from "../../ContactLink";
 import { Button } from "../Button";
 import { Grid } from "../Grid";
@@ -10,36 +9,32 @@ import { HomeButton } from "./HomeButton";
 import { LanguageMenu } from "./LanguageMenu";
 import { MobileIcon } from "./MobileIcon";
 
-export const Menu = () => {
-  const { t } = useTranslation();
-
-  return (
-    <Root>
-      <Grid container area="main">
-        {/* todo */}
-        <Grid item xs={12} lg={9}>
-          <Left>
-            <MobileIcon />
-            <HomeButton />
-            <LanguageMenuWrapper>
-              <LanguageMenu />
-            </LanguageMenuWrapper>
-          </Left>
-        </Grid>
-        <Grid item lg={3} xs={0}>
-          <Right>
-            <Link transparent to="//github.com/kosciolek/MMIP-2" target="_blank">
-              <GithubButton>
-                <StyledGithubSvg />
-              </GithubButton>
-            </Link>
-            <ContactLink />
-          </Right>
-        </Grid>
+export const Menu = () => (
+  <Root>
+    <Grid container area="main">
+      {/* todo */}
+      <Grid item xs={12} lg={9}>
+        <Left>
+          <MobileIcon />
+          <HomeButton />
+          <LanguageMenuWrapper>
+            <LanguageMenu />
+          </LanguageMenuWrapper>
+        </Left>
       </Grid>
-    </Root>
-  );
-};
+      <Grid item lg={3} xs={0}>
+        <Right>
+          <Link transparent to="//github.com/kosciolek/MMIP-2" target="_blank">
+            <GithubButton>
+              <StyledGithubSvg />
+            </GithubButton>
+          </Link>
+          <ContactLink />
+        </Right>
+      </Grid>
+    </Grid>
+  </Root>
+);
 
 export const Root = styled.div`
   border-bottom: 1px solid ${(p) => p.theme.colors.primary100};
@@ -72,11 +67,6 @@ export const GithubButton = styled(Button)`
 `;
 export const StyledGithubSvg = styled(GithubSvg)`
   fill: ${(p) => p.theme.colors.primary};
-`;
-export const Contact = styled(Button)`
-  font-size: 14px;
-  font-weight: 500;
-  padding: 0;
 `;
 export const LanguageMenuWrapper = styled.div`
   display: none;

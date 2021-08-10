@@ -35,11 +35,7 @@ export const PreviousWarning = () => {
         content={({ close }) => (
           <div>
             <DialogTitle>{t("Clear answers")}</DialogTitle>
-            <DialogContent>
-              {t(
-                "Are you sure you want to clear all answers?"
-              )}
-            </DialogContent>
+            <DialogContent>{t("Are you sure you want to clear all answers?")}</DialogContent>
             <DialogActions>
               <Button onClick={onClick} variant="filled">
                 {t("Yes")}

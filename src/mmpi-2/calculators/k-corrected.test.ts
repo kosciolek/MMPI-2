@@ -1,10 +1,10 @@
 import { mainScales } from "../criteria/main-scales";
 import { calculateKCorrected } from "./k-corrected";
 import { calculateRawScale } from "./raw";
-import { femaleRaw, kCorrected, maleRaw, testAnswers } from "./test-data";
+import { kCorrected, testAnswers } from "./test-data";
 
-describe("K-corrected", function () {
-  it("female", function () {
+describe("K-corrected", () => {
+  it("female", () => {
     const results = calculateKCorrected(
       Object.fromEntries(
         Object.keys(mainScales).map((scale) => [

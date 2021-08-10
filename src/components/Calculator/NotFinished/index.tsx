@@ -1,6 +1,5 @@
 import styled from "@emotion/styled";
 import { Trans, useTranslation } from "react-i18next";
-import { Redirect } from "react-router-dom";
 import { useAppSelector } from "../../../redux/hooks";
 import { getUnfinishedAnswersCount } from "../../../redux/mmpi/selectors";
 import { HelmetTitle } from "../../HelmetTitle";

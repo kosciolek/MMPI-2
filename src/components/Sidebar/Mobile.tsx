@@ -1,6 +1,7 @@
-import React, { ReactNode, useEffect, useRef } from "react";
+import React, { ReactNode, useRef } from "react";
 import { animated, useTransition } from "react-spring";
 import styled from "@emotion/styled";
+import ReactDOM from "react-dom";
 import { ContactLink } from "../../ContactLink";
 import { media } from "../../hooks/media";
 import { useBodyLock } from "../../hooks/useBodyLock";
@@ -8,10 +9,8 @@ import { useClickOutside } from "../../hooks/useClickOutside";
 import { $callback } from "../../hooks/utils";
 import { useAppDispatch, useAppSelector } from "../../redux/hooks";
 import { uiSlice } from "../../redux/ui";
-import { HomeButton } from "../Menu/HomeButton";
 import { LanguageMenu } from "../Menu/LanguageMenu";
 import { MobileIcon } from "../Menu/MobileIcon";
-import ReactDOM from "react-dom";
 
 export const Mobile = ({ children }: { children?: ReactNode }) => {
   const dispatch = useAppDispatch();

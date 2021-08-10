@@ -7,6 +7,7 @@ export const RawOption = ({ children, value, ...rest }: { value?: any; children?
 
   useLayoutEffect(() => {
     if (value === selectedValue) setDisplayNode(children);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return (

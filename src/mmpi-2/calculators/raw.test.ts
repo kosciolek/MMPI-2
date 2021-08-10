@@ -2,8 +2,8 @@ import { mainScales } from "../criteria/main-scales";
 import { calculateRawScale } from "./raw";
 import { femaleRaw, maleRaw, testAnswers } from "./test-data";
 
-describe("Raw", function () {
-  it("female", function () {
+describe("Raw", () => {
+  it("female", () => {
     const results = Object.fromEntries(
       Object.keys(mainScales).map((scale) => [
         scale,
@@ -13,7 +13,7 @@ describe("Raw", function () {
     expect(results).toEqual(femaleRaw);
   });
 
-  it("male", function () {
+  it("male", () => {
     const results = Object.fromEntries(
       Object.keys(mainScales).map((scale) => [
         scale,

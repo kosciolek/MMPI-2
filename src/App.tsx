@@ -9,7 +9,7 @@ import { Questionnaire } from "./components/Questionnaire";
 import { GlobalStyles } from "./GlobalStyles";
 
 function App() {
-  const { t, i18n } = useTranslation();
+  const { t } = useTranslation();
   const { pathname } = useLocation();
 
   return (

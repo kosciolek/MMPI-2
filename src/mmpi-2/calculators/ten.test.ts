@@ -1,11 +1,10 @@
 import { mainScales } from "../criteria/main-scales";
-import { calculateKCorrected } from "./k-corrected";
 import { calculateRawScale } from "./raw";
 import { calculateTenScales } from "./ten";
-import { femaleRaw, kCorrected, maleRaw, testAnswers, tFemale, tMale } from "./test-data";
+import { testAnswers, tFemale, tMale } from "./test-data";
 
-describe("T-scores", function () {
-  it("female", function () {
+describe("T-scores", () => {
+  it("female", () => {
     const results = calculateTenScales(
       Object.fromEntries(
         Object.keys(mainScales).map((scale) => [
@@ -18,7 +17,7 @@ describe("T-scores", function () {
     expect(results).toEqual(tFemale);
   });
 
-  it("male", function () {
+  it("male", () => {
     const results = calculateTenScales(
       Object.fromEntries(
         Object.keys(mainScales).map((scale) => [

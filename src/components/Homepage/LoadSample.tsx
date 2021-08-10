@@ -7,7 +7,6 @@ import { useAppDispatch } from "../../redux/hooks";
 import { mmpiSlice } from "../../redux/mmpi";
 import { Button } from "../Button";
 import { Dialog, DialogActions, DialogContent, DialogTitle } from "../Dialog";
-import { PreviousWarningButton } from "./PreviousWarning";
 
 export const LoadSample = () => {
   const { t } = useTranslation();

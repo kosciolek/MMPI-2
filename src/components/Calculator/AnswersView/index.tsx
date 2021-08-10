@@ -1,5 +1,4 @@
 import styled from "@emotion/styled";
-import { Helmet } from "react-helmet";
 import { useTranslation } from "react-i18next";
 import { getUnfinishedAnswersCount } from "../../../redux/mmpi/selectors";
 import { HelmetTitle } from "../../HelmetTitle";

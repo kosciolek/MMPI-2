@@ -1,7 +1,5 @@
 import styled from "@emotion/styled";
-import { ReactNode } from "react";
 import { media } from "../../hooks/media";
-import { useAppDispatch, useAppSelector } from "../../redux/hooks";
 
 export const Desktop = styled.div`
   display: none;

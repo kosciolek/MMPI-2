@@ -2,7 +2,6 @@ import styled from "@emotion/styled";
 import { ScaleHierarchy, scaleHierarchy } from "../../../mmpi-2/scaleHierarchy";
 import { useAppSelector } from "../../../redux/hooks";
 import { getFinalScaleValues } from "../../../redux/mmpi/mmpi-selectors";
-import { Divider } from "../../Divider";
 import { Counter } from "./Counter";
 
 export type ScaleGroupProps = {

@@ -2,12 +2,10 @@ import styled from "@emotion/styled/macro";
 import { useTranslation } from "react-i18next";
 import { Link } from "react-router-dom";
 import { media } from "../../hooks/media";
-import { useAppSelector } from "../../redux/hooks";
-import { getIsFinished } from "../../redux/mmpi/selectors";
 import { Button } from "../Button";
 import { Grid } from "../Grid";
 import { Layout } from "../Layout";
-import { contentWidth, isDesktopLayout } from "../Layout/utils";
+import { contentWidth } from "../Layout/utils";
 import { Sidebar } from "../Sidebar";
 import { ReactComponent as TestSvg } from "./homepage-test-icon.svg";
 import { LoadSample } from "./LoadSample";
@@ -72,7 +70,7 @@ export const WritingsWrapper = styled.div`
   & > * + * {
     margin-top: 28px;
   }
-  
+
   ${media.md} {
     flex-basis: 50%;
   }

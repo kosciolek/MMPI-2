@@ -1,5 +1,4 @@
 import styled from "@emotion/styled";
-import { Helmet } from "react-helmet";
 import { Trans, useTranslation } from "react-i18next";
 import { Redirect } from "react-router-dom";
 import { useAppSelector } from "../../redux/hooks";
