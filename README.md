@@ -4,6 +4,18 @@ A Minnesota Multiphasic Personality Inventory 2 automated questionnaire and calc
 
 Though it's primarily meant to be [filled out by a psychologist](https://mmpi.kosciolek.dev/calculator/answers), a [questionnaire](https://mmpi.kosciolek.dev/questionnaire/1) for the patient is available as well.
 
+
+## Live
+
+The application is available [here.](https://mmpi.kosciolek.dev) You can load a random answer set by clicking `Click here to load a sample answer set.`
+
+## Features
+
+1. View all scales as described in the Scales section.
+2. Download / upload questionnaire answers.
+3. Full persistence - data persists between sessions.
+4. EN / PL languages.
+
 ## Scales
 
 All scales are available in three viewing modes:
