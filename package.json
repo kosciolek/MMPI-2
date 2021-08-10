@@ -1,7 +1,8 @@
 {
   "name": "MMPI-2",
-  "author": "kosciolek <mickeyrepository@gmail.com>",
-  "version": "0.1.0",
+  "author": "kosciolek <juliusz@kosciolek.dev>",
+  "version": "1.0.0",
+  "license": "GPL-3",
   "private": true,
   "dependencies": {
     "@emotion/react": "^11.4.0",
