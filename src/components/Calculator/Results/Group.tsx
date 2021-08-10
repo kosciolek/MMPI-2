@@ -12,7 +12,7 @@ export type ScaleGroupProps = {
 export const Group = ({ groupName }: ScaleGroupProps) => {
   const results = useAppSelector(getFinalScaleValues);
   const { t } = useTranslation("groups");
-  
+
   return (
     <Root>
       <GroupName>{t(groupName)}</GroupName>

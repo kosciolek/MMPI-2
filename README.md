@@ -157,7 +157,13 @@ Supported languages:
 * Polish
 * English
 
-![screenshot](https://i.imgur.com/XX1BH6P.png)
+
+-----------------
+
+![screenshot](https://i.imgur.com/B1awtAz.png)
+![screenshot](https://i.imgur.com/DyiRdcu.png)
+![screenshot](https://i.imgur.com/DvqL3CW.png)
+![screenshot](https://i.imgur.com/HhTygwX.png)
 
 -----------------
 
