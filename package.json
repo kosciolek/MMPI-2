@@ -33,7 +33,9 @@
     "prepare": "husky install",
     "lint": "eslint src",
     "lint:fix": "prettier src --write && eslint src --fix",
-    "i18n:extract": "i18next 'src/**/*.{ts,tsx}'"
+    "i18n:extract": "i18next 'src/**/*.{ts,tsx}'",
+    "predeploy": "yarn build",
+    "deploy": "yarn firebase deploy --only hosting"
   },
   "browserslist": {
     "production": [
