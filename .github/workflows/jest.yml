@@ -12,6 +12,6 @@ jobs:
         with:
           node-version: 15
       - name: install deps
-        run: yarn --frozen-lockfile
+        run: yarn --immutable --immutable-cache
       - name: test
         run: yarn test
