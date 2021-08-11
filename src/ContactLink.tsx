@@ -6,7 +6,7 @@ import { Link } from "./components/Link";
 export const ContactLink = () => {
   const { t } = useTranslation();
   return (
-    <Link transparent to="/contact">
+    <Link to="/contact">
       <Contact>{t("contact")}</Contact>
     </Link>
   );
