@@ -1,7 +1,6 @@
 import styled from "@emotion/styled";
 import { useTranslation } from "react-i18next";
 import { useDispatch } from "react-redux";
-import { media } from "../../hooks/media";
 import { questionCount } from "../../mmpi-2/utils";
 import { mmpiSlice } from "../../redux/mmpi";
 import { Button } from "../Button";

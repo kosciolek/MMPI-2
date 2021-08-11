@@ -19,10 +19,7 @@ export const NotFinished = () => {
       <div>
         <Trans t={t}>
           Missing <Txt color="primary">{{ answers: remainingAnswers }}</Txt> answers.
-          <AnswersLink to="/calculator/answers">
-            {" "}
-            View answers.
-          </AnswersLink>
+          <AnswersLink to="/calculator/answers"> View answers.</AnswersLink>
         </Trans>
       </div>
     </Root>
