@@ -7,6 +7,7 @@ import { mmpiSlice } from "../../redux/mmpi";
 import { Button } from "../Button";
 import { contentWidth } from "../Layout/utils";
 import { Link } from "../Link";
+import { QuestionText } from "./QuestionText";
 
 export type QuestionProps = {
   id: number;
@@ -14,7 +15,7 @@ export type QuestionProps = {
 
 /* Todo make links relative */
 export const Question = ({ id }: QuestionProps) => {
-  const { t } = useTranslation("questions");
+  const { t } = useTranslation();
 
   const nextQuestion = id + 2;
 
@@ -22,7 +23,7 @@ export const Question = ({ id }: QuestionProps) => {
   const onAnswerClick = (answer: boolean) =>
     dispatch(
       mmpiSlice.actions.answerSelected({
-        questionId: id - 1,
+        questionId: id,
         answer,
       })
     );
@@ -33,13 +34,13 @@ export const Question = ({ id }: QuestionProps) => {
         <Counter>
           {id + 1} / {questionCount}
         </Counter>
-        <QuestionText>{t((id + 1).toString())}</QuestionText>
+        <QuestionText id={id} />
         <Answers>
           <Link to={`/questionnaire/${nextQuestion}`} onClick={() => onAnswerClick(true)}>
-            <Answer>TAK</Answer>
+            <Answer>{t("Yes")}</Answer>
           </Link>
           <Link to={`/questionnaire/${nextQuestion}`} onClick={() => onAnswerClick(false)}>
-            <Answer>Nie</Answer>
+            <Answer>{t("No")}</Answer>
           </Link>
         </Answers>
       </Contents>
@@ -61,19 +62,6 @@ export const Counter = styled.div`
   font-weight: bold;
   font-size: 18px;
   color: ${(p) => p.theme.colors.neutral600};
-`;
-export const QuestionText = styled.div`
-  margin-top: 8px;
-  color: ${(p) => p.theme.colors.primary};
-  font-weight: bold;
-  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.18);
-  text-align: center;
-
-  padding: 0 24px;
-  font-size: 32px;
-  ${media.md} {
-    font-size: 44px;
-  }
 `;
 export const Answers = styled.div`
   margin-top: 80px;

@@ -1,6 +1,7 @@
 import { Redirect, Route, Switch, useRouteMatch } from "react-router-dom";
 import { questionCount } from "../../mmpi-2/utils";
 import { Layout } from "../Layout";
+import { Finished } from "./Finished";
 import { Question } from "./Question";
 
 export const Questionnaire = () => {
@@ -11,13 +12,16 @@ export const Questionnaire = () => {
 
   const { questionId } = match.params;
   const questionIdInt = parseInt(questionId, 10) - 1;
-  if (Number.isNaN(questionIdInt) || questionIdInt > questionCount || questionIdInt < 0)
-    return <Redirect to="/questionnaire/1" />;
+
+  if (questionIdInt === questionCount) return <Redirect to={`${path}/finished`} />;
 
   return (
     <Layout>
       <Switch>
-        <Route path={`${path}/:questionId/`}>
+        <Route path={`${path}/finished`}>
+          <Finished />
+        </Route>
+        <Route path={`${path}/:questionId(\\d+)/`}>
           <Question id={questionIdInt} />
         </Route>
         <Redirect to={`${path}/1/`} />

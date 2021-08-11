@@ -22,6 +22,8 @@ export const Root = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
+  
+  margin-top: 24px;
 
   & > * + * {
     margin-top: 24px;
@@ -31,6 +33,7 @@ export const FinishedText = styled.div`
   text-shadow: 0px 2px 4px rgba(0, 0, 0, 0.18);
   font-weight: bold;
   font-size: 48px;
+  text-align: center;
   color: ${(p) => p.theme.colors.primary600};
 `;
 export const GoToResults = styled(Button)``;
