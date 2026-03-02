@@ -1,6 +1,4 @@
-**IF YOU'RE LOOKING FOR THE OLD APP, SEE BRANCH [`old-app`](https://github.com/kosciolek/MMPI-2/tree/old-app)**
-
-**The scales are inaccurate, they'll be corrected soon.**
+**This app might be outdated and results might be incorrect. Please don't use it in production without a proper review, especially of the logic that calculates actual output. Note that calculations might differ between countries, and it might be incorrect for yours.**
 
 # MMPI-2 calculator
 
